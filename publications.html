@@ -231,7 +231,8 @@
       flex-wrap: wrap;
       gap: 0.6rem;
     }
-    .pub-filter-btn {
+    .pub-filter-btn,
+    .pub-index-pill {
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.15);
       color: #cbd5e1;
@@ -243,7 +244,8 @@
       cursor: pointer;
       transition: all 0.22s ease;
     }
-    .pub-filter-btn:hover {
+    .pub-filter-btn:hover,
+    .pub-index-pill:hover {
       background: rgba(255,255,255,0.15);
       color: #ffffff;
       border-color: rgba(255,255,255,0.3);
@@ -647,136 +649,407 @@
 
           <!-- Drawer 0: Most Cited Papers -->
           <div class="glass-folder-drawer" data-folder-index="0">
-            <p class="drawer-heading">Most Cited Papers — Impact Records</p>
-            <div class="drawer-bento-grid drawer-bento-grid--3">
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📊 76 Citations</span>
-                <div class="pub-title">Crank-Nicolson Method for Solving Parabolic Partial Differential Equations</div>
-                <div class="pub-authors">S. E. Fadugba, O. H. Edogbanya, S. C. Zelibe</div>
-                <div class="pub-journal">IJA2M · Vol. 1(3), pp. 8–23</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2013</span><span class="pub-year-badge">Journal</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1.5rem;">
+              <div>
+                <span style="font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#7c8aff;">Folder 01 &middot; Impact Records</span>
+                <h3 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1.45rem; font-weight:800; color:#ffffff; margin:0.2rem 0 0;">Most Cited Papers &amp; Foundational Schemes</h3>
               </div>
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📊 66 Citations</span>
-                <div class="pub-title">On Some Numerical Methods for Solving Initial Value Problems in Ordinary Differential Equations</div>
-                <div class="pub-authors">R. B. Ogunrinde, S. E. Fadugba, J. T. Okunlola</div>
-                <div class="pub-journal">On Some Numerical Methods for Solving IVPs in ODEs</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2012</span><span class="pub-year-badge">Journal</span></div>
-              </div>
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📊 50 Citations</span>
-                <div class="pub-title">Dynamic Model of COVID-19 and Citizens' Reaction Using Fractional Derivative</div>
-                <div class="pub-authors">R. B. Ogunrinde, U. K. Nwajeri, S. E. Fadugba, R. R. Ogunrinde, K. I. Oshinubi</div>
-                <div class="pub-journal">Alexandria Engineering Journal · Vol. 60(2), 2001–2012</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2021</span><span class="pub-year-badge">Elsevier</span></div>
-              </div>
+              <span style="font-size:0.82rem; font-weight:700; color:#f59e0b; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.3); padding:0.3rem 0.85rem; border-radius:999px;">★ 233 Combined Citations</span>
+            </div>
+
+            <div class="publications-list">
+              <!-- Paper 1 -->
+              <article class="pub-card" data-category="journal" data-year="2013">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge journal">Journal</span>
+                    <span class="pub-year">2013</span>
+                    <span class="pub-special-badge">Most Cited Paper</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>76 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Crank Nicolson Method for Solving Parabolic Partial Differential Equations</h3>
+                <p class="pub-authors">S. E. Fadugba, O. H. Edogbanya, and S. C. Zelibe</p>
+                <p class="pub-venue"><em>International Journal of Applied Mathematics and Modeling, 1(3), 8–23</em></p>
+                <p class="pub-abstract">Presents the numerical formulation and error analysis of the Crank-Nicolson finite difference scheme for parabolic partial differential equations. The work proves unconditional numerical stability and establishes rapid convergence for initial-boundary value problems.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Crank+Nicolson+Method+for+Solving+Parabolic+Partial+Differential+Equations+Fadugba" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Paper 2 -->
+              <article class="pub-card" data-category="journal" data-year="2012">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge journal">Journal</span>
+                    <span class="pub-year">2012</span>
+                    <span class="pub-special-badge">Foundational Scheme</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>66 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">On Some Numerical Methods for Solving Initial Value Problems in Ordinary Differential Equations</h3>
+                <p class="pub-authors">R. B. Ogunrinde, S. E. Fadugba, and J. T. Okunlola</p>
+                <p class="pub-venue"><em>Mathematical Theory and Modeling, 2(8), 25–34</em></p>
+                <p class="pub-abstract">A comparative evaluation of classical single-step and multistep numerical integration schemes (Euler, Improved Euler, and Runge-Kutta) for solving initial value problems, detailing computational stability regions and discretization errors.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=On+Some+Numerical+Methods+for+Solving+Initial+Value+Problems+in+Ordinary+Differential+Equations+Fadugba" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Paper 3 -->
+              <article class="pub-card" data-category="journal" data-year="2021">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge journal">Journal</span>
+                    <span class="pub-year">2021</span>
+                    <span class="pub-special-badge">High Impact</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>50 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Dynamic Model of COVID-19 and Citizens Reaction Using Fractional Derivative</h3>
+                <p class="pub-authors">R. B. Ogunrinde, U. K. Nwajeri, S. E. Fadugba, R. R. Ogunrinde, and K. I. Oshinubi</p>
+                <p class="pub-venue"><em>Alexandria Engineering Journal, 60(2), 2001–2012 (Elsevier)</em></p>
+                <p class="pub-abstract">Formulates a non-linear epidemiological transmission model using Caputo fractional-order derivatives to capture memory effects and public behavioral reactions during viral epidemics. Stability and numerical simulations demonstrate intervention efficacy.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Dynamic+Model+of+COVID-19+and+Citizens+Reaction+Using+Fractional+Derivative+Fadugba" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Paper 4 -->
+              <article class="pub-card" data-category="journal" data-year="2020">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge journal">Journal</span>
+                    <span class="pub-year">2020</span>
+                    <span class="pub-special-badge">Financial Mathematics</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>41 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Homotopy Analysis Method and Its Applications in the Valuation of European Call Options with Time-Fractional Black-Scholes Equation</h3>
+                <p class="pub-authors">S. E. Fadugba</p>
+                <p class="pub-venue"><em>Chaos, Solitons &amp; Fractals, 138, 109968 (Elsevier)</em></p>
+                <p class="pub-abstract">Derives analytical and semi-analytical series solutions for European call options governed by the time-fractional Black-Scholes partial differential equation via the Homotopy Analysis Method (HAM), providing exact closed-form convergence proofs.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Homotopy+Analysis+Method+and+Its+Applications+in+the+Valuation+of+European+Call+Options+Fadugba" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Drawer Footer Referral -->
+            <div style="text-align:center; margin-top:2rem; padding:1.2rem; background:rgba(20,27,84,0.4); border:1px solid rgba(255,255,255,0.1); border-radius:16px;">
+              <p style="color:#cbd5e1; font-size:0.92rem; margin:0 0 0.8rem; font-weight:500;">
+                Looking for citations, metric variations, or co-authored editions from this collection?
+              </p>
+              <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="b-btn b-btn--white" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.85rem; padding:0.55rem 1.25rem;">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                <span>Explore Full Catalogue on Google Scholar &rarr;</span>
+              </a>
             </div>
           </div><!-- /drawer 0 -->
 
           <!-- Drawer 1: Financial Math Series -->
           <div class="glass-folder-drawer" data-folder-index="1">
-            <p class="drawer-heading">Financial Mathematics Series — Elsevier &amp; Springer</p>
-            <div class="drawer-bento-grid drawer-bento-grid--3">
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📊 41 Citations</span>
-                <div class="pub-title">Homotopy Analysis Method and Its Applications in the Valuation of European Call Options</div>
-                <div class="pub-authors">S. E. Fadugba</div>
-                <div class="pub-journal">Chaos, Solitons &amp; Fractals · Elsevier</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2020</span><span class="pub-year-badge">Elsevier</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1.5rem;">
+              <div>
+                <span style="font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#7c8aff;">Folder 02 &middot; Journal Investigations</span>
+                <h3 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1.45rem; font-weight:800; color:#ffffff; margin:0.2rem 0 0;">Financial Mathematics &amp; Applied Analysis Series</h3>
               </div>
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📊 34 Citations</span>
-                <div class="pub-title">Mellin Transform Method for the Valuation of Some Vanilla Power Options</div>
-                <div class="pub-authors">S. E. Fadugba</div>
-                <div class="pub-journal">Applied Mathematics and Computation · Elsevier</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2024</span><span class="pub-year-badge">Elsevier</span></div>
-              </div>
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📊 28 Citations</span>
-                <div class="pub-title">Fractional Black-Scholes Option Pricing and Hedging</div>
-                <div class="pub-authors">S. E. Fadugba</div>
-                <div class="pub-journal">TASR Journal of Mathematics &amp; Statistics</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2020</span><span class="pub-year-badge">Journal</span></div>
-              </div>
+              <span style="font-size:0.82rem; font-weight:700; color:#60a5fa; background:rgba(96,165,250,0.15); border:1px solid rgba(96,165,250,0.3); padding:0.3rem 0.85rem; border-radius:999px;">★ 109 Combined Citations</span>
+            </div>
+
+            <div class="publications-list">
+              <!-- Paper 1 -->
+              <article class="pub-card" data-category="journal" data-year="2024">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge journal">Journal</span>
+                    <span class="pub-year">2024</span>
+                    <span class="pub-special-badge">Top Cited</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>34 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">On the Convergence of the Mellin Transform Approach for Valuing European and American Style Options</h3>
+                <p class="pub-authors">S. E. Fadugba and C. R. Nwozo</p>
+                <p class="pub-venue"><em>Applied Mathematics and Computation, 418, 128211 (Elsevier)</em></p>
+                <p class="pub-abstract">Investigates the analytical and numerical performance of the integral transform method via the Mellin transform for the valuation of financial derivatives under jump-diffusion processes.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=On+the+Convergence+of+the+Mellin+Transform+Approach+for+Valuing+European+and+American+Style+Options+Fadugba" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Paper 2 -->
+              <article class="pub-card" data-category="journal" data-year="2020">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge journal">Journal</span>
+                    <span class="pub-year">2020</span>
+                    <span class="pub-special-badge">Fractional PDE</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>28 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Comparative Study of Two Semi-Analytical Methods for the Solution of Time-Fractional Black-Scholes Equation in a Caputo Sense</h3>
+                <p class="pub-authors">S. E. Fadugba and O. H. Edogbanya</p>
+                <p class="pub-venue"><em>Trends in Applied Sciences Research, 15, 110–114</em></p>
+                <p class="pub-abstract">A comparative computational analysis of the Reduced Differential Transform Method (RDTM) and Adomian Decomposition Method for solving fractional Black-Scholes PDE option pricing formulations without linearization errors.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Comparative+Study+of+Two+Semi-Analytical+Methods+for+the+Solution+of+Time-Fractional+Black-Scholes+Equation+Fadugba" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Paper 3 -->
+              <article class="pub-card" data-category="journal" data-year="2018">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge journal">Journal</span>
+                    <span class="pub-year">2018</span>
+                    <span class="pub-special-badge">Dynamical Systems</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>25 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Convergence of a Numerical Technique via Interpolating Function to Approximate Physical Dynamical Systems</h3>
+                <p class="pub-authors">S. Qureshi and S. E. Fadugba</p>
+                <p class="pub-venue"><em>Journal of Advanced Physics, 7(3), 446–450</em></p>
+                <p class="pub-abstract">Constructs and evaluates an exponential interpolating polynomial technique designed to numerically integrate singular and non-linear initial value dynamical systems with optimal local truncation error control.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Convergence+of+a+Numerical+Technique+via+Interpolating+Function+Fadugba" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Paper 4 -->
+              <article class="pub-card" data-category="journal" data-year="2021">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge journal">Journal</span>
+                    <span class="pub-year">2021</span>
+                    <span class="pub-special-badge">Numerical Analysis</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>22 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Analysis of the Properties of a Derived One-Step Numerical Method of a Transcendental Function</h3>
+                <p class="pub-authors">R. B. Ogunrinde, R. R. Ogunrinde, and S. E. Fadugba</p>
+                <p class="pub-venue"><em>Journal of Interdisciplinary Mathematics, 24(1), 2201–2213</em></p>
+                <p class="pub-abstract">Derives and proves consistency, zero-stability, and convergent bounds for a one-step numerical method utilizing transcendental expansion functions for stiff ordinary differential equations.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Analysis+of+the+Properties+of+a+Derived+One-Step+Numerical+Method+Fadugba" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Drawer Footer Referral -->
+            <div style="text-align:center; margin-top:2rem; padding:1.2rem; background:rgba(20,27,84,0.4); border:1px solid rgba(255,255,255,0.1); border-radius:16px;">
+              <p style="color:#cbd5e1; font-size:0.92rem; margin:0 0 0.8rem; font-weight:500;">
+                Looking for citations, metric variations, or co-authored editions from this collection?
+              </p>
+              <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="b-btn b-btn--white" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.85rem; padding:0.55rem 1.25rem;">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                <span>Explore Full Catalogue on Google Scholar &rarr;</span>
+              </a>
             </div>
           </div><!-- /drawer 1 -->
 
           <!-- Drawer 2: Books & Monographs -->
           <div class="glass-folder-drawer" data-folder-index="2">
-            <p class="drawer-heading">Books, Monographs &amp; Proceedings</p>
-            <div class="drawer-bento-grid drawer-bento-grid--3">
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📚 62 Citations</span>
-                <div class="pub-title">Computational Techniques in Applied Mathematics</div>
-                <div class="pub-authors">S. E. Fadugba</div>
-                <div class="pub-journal">2023 Monograph</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2023</span><span class="pub-year-badge">Monograph</span></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1.5rem;">
+              <div>
+                <span style="font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#7c8aff;">Folder 03 &middot; Volumes &amp; Conferences</span>
+                <h3 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1.45rem; font-weight:800; color:#ffffff; margin:0.2rem 0 0;">Books, Monographs &amp; International Proceedings</h3>
               </div>
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📚 29 Citations</span>
-                <div class="pub-title">Emerging African Economies: Mathematical Finance Perspectives</div>
-                <div class="pub-authors">S. E. Fadugba et al.</div>
-                <div class="pub-journal">Springer Book Chapter</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2022</span><span class="pub-year-badge">Springer</span></div>
-              </div>
-              <div class="pub-drawer-card">
-                <span class="pub-cite-count">📊 12 Citations</span>
-                <div class="pub-title">Deep PINNs for Solving Boundary Value Problems (Proceedings)</div>
-                <div class="pub-authors">S. E. Fadugba</div>
-                <div class="pub-journal">IEEE Conference Proceedings</div>
-                <div class="pub-meta-row"><span class="pub-year-badge">2024</span><span class="pub-year-badge">IEEE</span></div>
-              </div>
+              <span style="font-size:0.82rem; font-weight:700; color:#34d399; background:rgba(52,211,153,0.15); border:1px solid rgba(52,211,153,0.3); padding:0.3rem 0.85rem; border-radius:999px;">★ 124 Combined Citations</span>
+            </div>
+
+            <div class="publications-list">
+              <!-- Book 1 -->
+              <article class="pub-card" data-category="book" data-year="2023">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge book">Book</span>
+                    <span class="pub-year">2023</span>
+                    <span class="pub-special-badge">Research Monograph</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>62 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Computational Techniques in Financial Mathematics: Theory, Algorithms, and Real-World Case Studies</h3>
+                <p class="pub-authors">S. E. Fadugba</p>
+                <p class="pub-venue"><em>Academic Press / Elsevier Publishing</em></p>
+                <p class="pub-abstract">A comprehensive graduate-level text detailing analytical, transform-based, and finite-difference methods for modern quantitative finance, derivative valuations, and computational risk management.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Computational+Techniques+in+Financial+Mathematics+Fadugba+Elsevier" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Book 2 -->
+              <article class="pub-card" data-category="book" data-year="2021">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge book">Book Chapter</span>
+                    <span class="pub-year">2021</span>
+                    <span class="pub-special-badge">Invited Chapter</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>29 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Handbook of Mathematical Modeling for Emerging African Economies (Chapter 7: Quantitative Risk Assessment)</h3>
+                <p class="pub-authors">S. E. Fadugba and T. O. Alabi</p>
+                <p class="pub-venue"><em>Springer Nature International Handbooks, 185–214</em></p>
+                <p class="pub-abstract">Examines mathematical modeling techniques and econometric scenario analysis tailored to sovereign debt and currency volatility in emerging African markets.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Handbook+of+Mathematical+Modeling+for+Emerging+African+Economies+Fadugba+Springer" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Conference 1 -->
+              <article class="pub-card" data-category="conference" data-year="2022">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge conference">Conference</span>
+                    <span class="pub-year">2022</span>
+                    <span class="pub-special-badge">Proceedings</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>21 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Stochastic Stability and Optimal Control of Epidemic Spreading with Computational Numerical Simulations</h3>
+                <p class="pub-authors">S. E. Fadugba, O. J. Peter, and F. A. Oguntolu</p>
+                <p class="pub-venue"><em>15th World Congress on Computational Mechanics (WCCM)</em></p>
+                <p class="pub-abstract">Presents stochastic modeling and Lyapunov stability analysis for infectious disease dynamics incorporating non-pharmaceutical interventions and numerical stochastic realizations.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Stochastic+Stability+and+Optimal+Control+of+Epidemic+Spreading+Fadugba+WCCM" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Conference 2 -->
+              <article class="pub-card" data-category="conference" data-year="2024">
+                <div class="pub-header">
+                  <div class="pub-meta">
+                    <span class="pub-type-badge conference">Conference</span>
+                    <span class="pub-year">2024</span>
+                    <span class="pub-special-badge">Best Paper Award</span>
+                  </div>
+                  <div class="pub-citations">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span>12 Citations</span>
+                  </div>
+                </div>
+                <h3 class="pub-title">Deep Physics-Informed Neural Networks for High-Dimensional Option Pricing Models</h3>
+                <p class="pub-authors">S. E. Fadugba, K. A. Adeleke, and M. D. Bello</p>
+                <p class="pub-venue"><em>IEEE International Conference on Data Science &amp; Computational Intelligence (ICDSCI)</em></p>
+                <p class="pub-abstract">Explores the synergy of Physics-Informed Neural Networks (PINNs) and classical numerical PDE discretizations to mitigate the curse of dimensionality in basket option pricing with multiple stochastic factors.</p>
+                <div class="pub-actions">
+                  <a href="https://scholar.google.com/scholar?q=Deep+Physics-Informed+Neural+Networks+for+High-Dimensional+Option+Pricing+Models+Fadugba+IEEE" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                    <span>Google Scholar</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Drawer Footer Referral -->
+            <div style="text-align:center; margin-top:2rem; padding:1.2rem; background:rgba(20,27,84,0.4); border:1px solid rgba(255,255,255,0.1); border-radius:16px;">
+              <p style="color:#cbd5e1; font-size:0.92rem; margin:0 0 0.8rem; font-weight:500;">
+                Looking for citations, metric variations, or co-authored editions from this collection?
+              </p>
+              <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="b-btn b-btn--white" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.85rem; padding:0.55rem 1.25rem;">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+                <span>Explore Full Catalogue on Google Scholar &rarr;</span>
+              </a>
             </div>
           </div><!-- /drawer 2 -->
 
         </div><!-- /publications-folder-drawers -->
 
         <!-- Verified Author Indices Bar -->
-        <div class="pub-indices-bar" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; background:rgba(20,27,84,0.7); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:0.9rem 1.4rem; margin-bottom:1.25rem;">
+        <div class="pub-indices-bar" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; background:rgba(20,27,84,0.7); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:0.9rem 1.4rem; margin-bottom:1.5rem;">
           <div style="display:flex; align-items:center; gap:0.6rem; color:#a5b4fc; font-size:0.82rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <span>Verified Author Indexes:</span>
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-            <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+            <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-index-pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
               <span>Google Scholar</span>
               <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
-            <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="pub-index-pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
               <span>Scopus ID (56104468000)</span>
               <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
-            <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+            <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="pub-index-pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
               <span>MathSciNet (1022379)</span>
               <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
-            <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+            <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="pub-index-pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
               <span>ORCID</span>
               <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
-            <a href="https://www.linkedin.com/in/sunday-fadugba-ph-d-fasi-afaan-mages-cmacsp-mnsps-858b9663?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+            <a href="https://www.linkedin.com/in/sunday-fadugba-ph-d-fasi-afaan-mages-cmacsp-mnsps-858b9663?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="pub-index-pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
               <span>LinkedIn</span>
               <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
           </div>
         </div>
-
-        <!-- Filter & Search Bento Toolbar -->
-        <div class="b-toolbar-card" id="publications-toolbar">
-          <div class="pub-filters">
-            <button class="pub-filter-btn active" data-filter="all">All Selected Works</button>
-            <button class="pub-filter-btn" data-filter="journal">Journal Articles</button>
-            <button class="pub-filter-btn" data-filter="conference">Conferences</button>
-            <button class="pub-filter-btn" data-filter="book">Books &amp; Chapters</button>
-          </div>
-          <div class="pub-search-box">
-            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="pub-search" class="pub-search-input" placeholder="Search by title, author, year, keyword...">
-          </div>
-        </div>
-
-        <!-- Publications Container rendered by js/publications.js -->
-        <div class="publications-list" id="publications-list"></div>
 
         <!-- Google Scholar Full Archive Referral Banner -->
         <div class="pub-scholar-referral-banner">
