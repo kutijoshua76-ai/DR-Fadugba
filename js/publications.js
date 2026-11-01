@@ -256,11 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("publications-list");
   const searchInput = document.getElementById("pub-search");
   const filterButtons = document.querySelectorAll(".pub-filter-btn");
-  const modal = document.getElementById("bibtex-modal");
-  const modalCode = document.getElementById("bibtex-code");
-  const copyBtn = document.getElementById("copy-bibtex-btn");
-  const closeModalBtn = document.getElementById("close-modal-btn");
-  const toast = document.getElementById("toast");
 
   let activeFilter = "all";
   let searchQuery = "";
@@ -311,36 +306,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="pub-abstract">${pub.abstract}</p>
 
         <div class="pub-actions">
-          ${pub.doi ? `
-            <a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-              <span>View DOI</span>
-            </a>
-          ` : ''}
           <a href="https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}" target="_blank" rel="noopener noreferrer" class="btn-pub-link">
             <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
             <span>Google Scholar</span>
           </a>
-          <button class="btn-pub-bibtex" data-id="${pub.id}">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-            <span>Cite BibTeX</span>
-          </button>
         </div>
       </article>
     `).join("");
-
-    // Bind Cite BibTeX click
-    container.querySelectorAll(".btn-pub-bibtex").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const id = btn.getAttribute("data-id");
-        const pub = publicationsData.find(p => p.id === id);
-        if (pub && modal && modalCode) {
-          modalCode.textContent = pub.bibtex;
-          modal.classList.add("active");
-          document.body.style.overflow = "hidden";
-        }
-      });
-    });
   }
 
   // Filter Buttons
@@ -359,41 +331,6 @@ document.addEventListener("DOMContentLoaded", () => {
       searchQuery = e.target.value;
       renderPublications();
     });
-  }
-
-  // Modal interactions
-  if (closeModalBtn && modal) {
-    closeModalBtn.addEventListener("click", () => {
-      modal.classList.remove("active");
-      document.body.style.overflow = "";
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-        document.body.style.overflow = "";
-      }
-    });
-  }
-
-  // Copy BibTeX
-  if (copyBtn && modalCode) {
-    copyBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(modalCode.textContent).then(() => {
-        showToast("BibTeX citation copied to clipboard!");
-      }).catch(() => {
-        showToast("Unable to copy to clipboard automatically.");
-      });
-    });
-  }
-
-  function showToast(message) {
-    if (!toast) return;
-    toast.textContent = message;
-    toast.classList.add("show");
-    setTimeout(() => {
-      toast.classList.remove("show");
-    }, 3000);
   }
 
   // Initial render
