@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,6 +15,7 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glass-folder.css">
 
   <style>
     /* ===================================================================
@@ -494,6 +495,13 @@
           A documented record of professorial appointments, postgraduate mentorship, university governance, editorial directorships, and professional society contributions.
         </p>
 
+        <!-- Interactive 3D Glass Folders Showcase -->
+        <div class="glass-folders-showcase-wrap">
+          <div class="glass-folders-desk-dots" aria-hidden="true"></div>
+          <div class="glass-folders-showcase" id="cv-glass-folders"></div>
+          <p class="glass-folders-hint">Hover to lean &middot; Click to open dossiers &middot; Explore credentials &amp; qualifications</p>
+        </div>
+
         <!-- Top Stat Row (3-col Bento Grid) -->
         <div class="bento-grid-3">
           <!-- Card 1: Blue -->
@@ -819,6 +827,7 @@
     </div>
   </footer>
 
+  <script src="js/glass-folder.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
