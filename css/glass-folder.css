@@ -475,23 +475,17 @@ canvas.gf-sheet-art[data-ready] {
 .glass-folders-showcase-wrap {
   position: relative;
   width: 100%;
-  margin: 2rem 0 3rem;
-  padding: 2.5rem 1rem 3rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  margin: 1.5rem 0 2rem;
+  padding: 1.5rem 0 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
 }
 
 .glass-folders-desk-dots {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.18;
-  color: #8b94ff;
-  background-image: radial-gradient(currentColor 1.2px, transparent 1.5px);
-  background-size: 24px 24px;
+  display: none;
 }
 
 .glass-folders-showcase {
