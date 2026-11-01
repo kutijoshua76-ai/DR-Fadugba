@@ -15,7 +15,7 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/glass-folder.css">
+  <link rel="stylesheet" href="css/glass-folder.css">`n  <link rel="stylesheet" href="css/folder-drawer.css">
 
   <style>
     /* ===================================================================
@@ -495,61 +495,98 @@
         <div class="glass-folders-showcase-wrap">
           <div class="glass-folders-desk-dots" aria-hidden="true"></div>
           <div class="glass-folders-showcase" id="contact-glass-folders"></div>
-          <p class="glass-folders-hint">Hover to lean &middot; Click to open dossiers &middot; Connect with Dr. Fadugba</p>
+          <p class="glass-folders-hint">Hover to lean &middot; Click folder to open &middot; Connect with Dr. Fadugba</p>
         </div>
 
-        <!-- Top Stat Row (3-col Bento Grid) -->
-        <div class="bento-grid-3">
-          <!-- Card 1: Blue -->
-          <article class="b-card b-card--blue">
-            <div class="b-icon-badge">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </div>
-            <span class="b-stat-label">Direct Correspondence</span>
-            <h3 class="b-card-title">Official Email</h3>
-            <p class="b-card-desc">
-              <a href="mailto:sunday.fadugba@eksu.edu.ng" style="color: #ffffff; text-decoration: underline; font-weight: 700;">sunday.fadugba@eksu.edu.ng</a><br>
-              Primary communication line for scholarly proposals and administrative matters.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Rapid Response</span>
-              <span class="b-tag">Institutional Channel</span>
-            </div>
-          </article>
+        <!-- Folder Drawers — contact channels embedded here -->
+        <div class="glass-folder-drawer-divider" aria-hidden="true"></div>
+        <div class="glass-folder-drawers-wrap" id="contact-folder-drawers">
 
-          <!-- Card 2: White -->
-          <article class="b-card b-card--white">
-            <div class="b-icon-badge">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <!-- Drawer 0: Official Academic Desk -->
+          <div class="glass-folder-drawer" data-folder-index="0">
+            <p class="drawer-heading">Official Academic Desk — EKSU Office</p>
+            <div class="drawer-bento-grid drawer-bento-grid--3">
+              <div class="b-card b-card--blue">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--white">Institution</span></div>
+                <h3 class="b-card-title">Department of Mathematics</h3>
+                <p class="b-card-desc">Faculty of Science, Ekiti State University, Ado Ekiti, Ekiti State, Nigeria. All formal correspondence should be addressed to the Department.</p>
+                <div class="b-tags"><span class="b-tag">EKSU</span><span class="b-tag">Ado Ekiti</span><span class="b-tag">Nigeria</span></div>
+              </div>
+              <div class="b-card b-card--white">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--blue">Official Email</span></div>
+                <h3 class="b-card-title">Email Desk</h3>
+                <p class="b-card-desc">Send academic inquiries, research collaboration proposals, or speaking invitations directly to Dr. Fadugba's official institutional email.</p>
+                <div class="b-tags">
+                  <a href="mailto:sunday.fadugba@eksu.edu.ng" class="b-tag" style="text-decoration:none;color:inherit;">sunday.fadugba@eksu.edu.ng</a>
+                </div>
+              </div>
+              <div class="b-card b-card--navy">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--gold">Office Hours</span></div>
+                <h3 class="b-card-title">Office Consultation</h3>
+                <p class="b-card-desc">Office consultations are available by academic appointment. Please email in advance to schedule a meeting — in-person or virtual.</p>
+                <div class="b-tags"><span class="b-tag">By Appointment</span><span class="b-tag">Virtual / In-Person</span></div>
+              </div>
             </div>
-            <span class="b-stat-label">Advising &amp; Consultation</span>
-            <h3 class="b-card-title">Office Hours</h3>
-            <p class="b-card-desc">
-              <strong style="color: #0f1240;">Tue &amp; Thu: 10:00 AM &ndash; 1:00 PM</strong><br>
-              Office 214, Faculty of Science, EKSU. By appointment for doctoral committee advising.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Faculty Office</span>
-              <span class="b-tag">Postgraduate Mentoring</span>
-            </div>
-          </article>
+          </div><!-- /drawer 0 -->
 
-          <!-- Card 3: Light Blue -->
-          <article class="b-card b-card--light-blue">
-            <div class="b-icon-badge">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          <!-- Drawer 1: Scholarly Networks -->
+          <div class="glass-folder-drawer" data-folder-index="1">
+            <p class="drawer-heading">Scholarly Networks — Verified Profiles</p>
+            <div class="drawer-bento-grid drawer-bento-grid--3">
+              <div class="b-card b-card--blue">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--white">Citations</span></div>
+                <h3 class="b-card-title">Google Scholar</h3>
+                <p class="b-card-desc">1,550+ all-time citations, h-index 20, i10-index 53. Complete publication record and citation metrics.</p>
+                <div class="b-tags">
+                  <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none;color:inherit;">Open Scholar →</a>
+                </div>
+              </div>
+              <div class="b-card b-card--white">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--blue">Indexing</span></div>
+                <h3 class="b-card-title">Scopus Author Record</h3>
+                <p class="b-card-desc">Elsevier Scopus verified author profile (ID: 56104468000) tracking peer-reviewed journal publications.</p>
+                <div class="b-tags">
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none;color:inherit;">Scopus ID →</a>
+                </div>
+              </div>
+              <div class="b-card b-card--navy">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--gold">Mathematics</span></div>
+                <h3 class="b-card-title">MathSciNet &amp; ORCID</h3>
+                <p class="b-card-desc">AMS MathSciNet (ID: 1022379) and ORCID (0000-0003-0911-6838) for verified mathematical research identity.</p>
+                <div class="b-tags">
+                  <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none;color:inherit;">MathSciNet →</a>
+                  <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none;color:inherit;">ORCID →</a>
+                </div>
+              </div>
             </div>
-            <span class="b-stat-label">Institution &amp; Faculty</span>
-            <h3 class="b-card-title">Campus Location</h3>
-            <p class="b-card-desc">
-              Department of Mathematical Sciences, Ekiti State University, P.M.B. 5363, Ado Ekiti, Ekiti State, Nigeria.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Faculty of Science</span>
-              <span class="b-tag">EKSU Main Campus</span>
+          </div><!-- /drawer 1 -->
+
+          <!-- Drawer 2: Inquiry Form -->
+          <div class="glass-folder-drawer" data-folder-index="2">
+            <p class="drawer-heading">Academic Inquiry Channels — Direct Contact</p>
+            <div class="drawer-bento-grid drawer-bento-grid--3">
+              <div class="b-card b-card--blue">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--white">Postgraduate</span></div>
+                <h3 class="b-card-title">Doctoral &amp; Master's Advising</h3>
+                <p class="b-card-desc">Prospective Ph.D. and M.Sc. students interested in supervision in numerical analysis, mathematical finance, or computational epidemiology are welcome to reach out.</p>
+                <div class="b-tags"><span class="b-tag">Ph.D. Supervision</span><span class="b-tag">M.Sc.</span></div>
+              </div>
+              <div class="b-card b-card--white">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--blue">Collaboration</span></div>
+                <h3 class="b-card-title">Research Collaboration</h3>
+                <p class="b-card-desc">Open to joint research grants, international mathematical visits, co-authorship, and interdisciplinary collaboration proposals from institutions globally.</p>
+                <div class="b-tags"><span class="b-tag">Joint Grants</span><span class="b-tag">Co-authorship</span></div>
+              </div>
+              <div class="b-card b-card--navy">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--gold">Speaking</span></div>
+                <h3 class="b-card-title">Keynotes &amp; Plenaries</h3>
+                <p class="b-card-desc">Available for invited conference keynotes, plenary lectures, and seminar presentations on Applied Mathematics, Financial Mathematics, and PINNs.</p>
+                <div class="b-tags"><span class="b-tag">Keynote</span><span class="b-tag">Conference</span></div>
+              </div>
             </div>
-          </article>
-        </div>
+          </div><!-- /drawer 2 -->
+
+        </div><!-- /contact-folder-drawers -->
 
         <!-- Main Contact Bento Grid (2-col: 1fr left, 1.35fr right) -->
         <div class="bento-grid-contact">

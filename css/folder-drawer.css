@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Folder Drawer System — embedded content panels below the glass folders
+   ========================================================================== */
+
+/* Wrapper that holds the drawers under the showcase */
+.glass-folder-drawers-wrap {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+/* A single drawer panel */
+.glass-folder-drawer {
+  display: none;
+  width: 100%;
+  animation: drawerIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  padding: 2.2rem 0 1.5rem;
+}
+
+.glass-folder-drawer.is-open {
+  display: block;
+}
+
+@keyframes drawerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Drawer inner grid — bento 2-col by default */
+.drawer-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+@media (max-width: 760px) {
+  .drawer-bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Drawer inner grid — 3-col for wider layouts */
+.drawer-bento-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1000px) {
+  .drawer-bento-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .drawer-bento-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Horizontal divider between folders + drawer */
+.glass-folder-drawer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(124, 138, 255, 0.25) 40%, rgba(124, 138, 255, 0.25) 60%, transparent 100%);
+  margin: 0.5rem 0 0;
+}
+
+/* The folder tabs row indicator (active folder highlight) */
+.gf-root.is-active-drawer .gf-front {
+  box-shadow: 0 0 0 2px rgba(124, 138, 255, 0.55);
+}
+
+/* Folder active-state glow */
+.gf-root[data-open].is-active-drawer::after {
+  content: '';
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgba(124, 138, 255, 0.45) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Drawer label / heading */
+.drawer-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7c8aff;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.drawer-heading::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: #7c8aff;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ======================================================================
+   Responsive: on mobile stack folders to single row with scroll
+   ====================================================================== */
+@media (max-width: 900px) {
+  .glass-folders-showcase {
+    gap: 1.4rem !important;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .glass-folders-showcase::-webkit-scrollbar {
+    display: none;
+  }
+  .gf-root {
+    flex-shrink: 0;
+  }
+}
+
+/* ======================================================================
+   Publication drawer items (cards with DOI / cite info)
+   ====================================================================== */
+.pub-drawer-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  padding: 1.4rem 1.6rem;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  cursor: default;
+}
+
+.pub-drawer-card:hover {
+  background: rgba(124, 138, 255, 0.07);
+  border-color: rgba(124, 138, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.pub-cite-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  background: rgba(124, 138, 255, 0.1);
+  border-radius: 100px;
+  padding: 0.2rem 0.65rem;
+  margin-bottom: 0.65rem;
+}
+
+.pub-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #f0f4ff;
+  line-height: 1.4;
+  margin-bottom: 0.45rem;
+}
+
+.pub-authors {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.pub-journal {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #7c8aff;
+  margin-bottom: 0.85rem;
+}
+
+.pub-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.pub-year-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(124, 138, 255, 0.15);
+  color: #c7d2fe;
+  border-radius: 6px;
+  padding: 0.18rem 0.55rem;
+}
+
+/* ======================================================================
+   B-card sizing adjustments inside drawers (scale them smaller)
+   ====================================================================== */
+.glass-folder-drawer .b-card {
+  padding: 1.4rem 1.5rem;
+  border-radius: 18px;
+  min-height: 0;
+}
+
+.glass-folder-drawer .b-card-title {
+  font-size: 1.1rem;
+}
+
+.glass-folder-drawer .b-card-desc {
+  font-size: 0.85rem;
+  -webkit-line-clamp: 4;
+}
+

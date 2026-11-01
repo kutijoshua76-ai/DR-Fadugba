@@ -15,7 +15,7 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/glass-folder.css">
+  <link rel="stylesheet" href="css/glass-folder.css">`n  <link rel="stylesheet" href="css/folder-drawer.css">
 
   <style>
     /* ===================================================================
@@ -499,54 +499,86 @@
         <div class="glass-folders-showcase-wrap">
           <div class="glass-folders-desk-dots" aria-hidden="true"></div>
           <div class="glass-folders-showcase" id="cv-glass-folders"></div>
-          <p class="glass-folders-hint">Hover to lean &middot; Click to open dossiers &middot; Explore credentials &amp; qualifications</p>
+          <p class="glass-folders-hint">Hover to lean &middot; Click folder to open &middot; Explore credentials &amp; qualifications</p>
         </div>
 
-        <!-- Top Stat Row (3-col Bento Grid) -->
-        <div class="bento-grid-3">
-          <!-- Card 1: Blue -->
-          <article class="b-card b-card--blue">
-            <span class="b-stat-label">Faculty Rank</span>
-            <div class="b-stat-number">2018–Pres.</div>
-            <h3 class="b-card-title">Senior Lecturer / Assoc. Professor</h3>
-            <p class="b-card-desc">
-              Department of Mathematical Sciences, Faculty of Science, Ekiti State University (EKSU), Ado Ekiti.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Applied Mathematics</span>
-              <span class="b-tag">Ph.D. Supervision</span>
-              <span class="b-tag">Postgrad Coordinator</span>
-            </div>
-          </article>
+        <!-- Folder Drawers — CV sections embedded here -->
+        <div class="glass-folder-drawer-divider" aria-hidden="true"></div>
+        <div class="glass-folder-drawers-wrap" id="cv-folder-drawers">
 
-          <!-- Card 2: White -->
-          <article class="b-card b-card--white">
-            <span class="b-stat-label">Highest Qualification</span>
-            <div class="b-stat-number">Ph.D.</div>
-            <h3 class="b-card-title">Applied Mathematics</h3>
-            <p class="b-card-desc">
-              Specialized in Numerical Analysis and Stochastic Differential Equations with Financial Derivative Valuations.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">First Class Honours B.Sc.</span>
-              <span class="b-tag">Distinction M.Sc.</span>
+          <!-- Drawer 0: Executive Dossier -->
+          <div class="glass-folder-drawer" data-folder-index="0">
+            <p class="drawer-heading">Executive Dossier — Rank &amp; Qualifications</p>
+            <div class="drawer-bento-grid drawer-bento-grid--3">
+              <div class="b-card b-card--blue">
+                <span class="b-stat-label">Faculty Rank</span>
+                <div class="b-stat-number" style="font-size:1.8rem;">Associate Prof.</div>
+                <p class="b-card-desc">Senior faculty ranking at Ekiti State University, Department of Mathematics, Faculty of Science. Appointed 2018–Present.</p>
+                <div class="b-tags"><span class="b-tag">Associate Professor</span><span class="b-tag">2018–Pres.</span></div>
+              </div>
+              <div class="b-card b-card--white">
+                <span class="b-stat-label">Highest Degree</span>
+                <div class="b-stat-number" style="font-size:1.8rem;">Ph.D.</div>
+                <p class="b-card-desc">Doctor of Philosophy in Applied Mathematics. Specialization in Fractional Calculus, Stochastic Schemes, and Computational Finance.</p>
+                <div class="b-tags"><span class="b-tag">Applied Mathematics</span><span class="b-tag">Fractional Calculus</span></div>
+              </div>
+              <div class="b-card b-card--navy">
+                <span class="b-stat-label">Scholar Identifiers</span>
+                <div class="b-stat-number" style="font-size:1.8rem;">ORCID</div>
+                <p class="b-card-desc">Verified researcher profiles across all major indexing databases for full scholarly traceability.</p>
+                <div class="b-tags">
+                  <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none;color:inherit;">ORCID →</a>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none;color:inherit;">Scopus →</a>
+                </div>
+              </div>
             </div>
-          </article>
+          </div><!-- /drawer 0 -->
 
-          <!-- Card 3: Light Blue -->
-          <article class="b-card b-card--light-blue">
-            <span class="b-stat-label">Dossier Action</span>
-            <div class="b-stat-number" style="font-size: 2.1rem; padding-top: 0.35rem;">Print &amp; PDF</div>
-            <h3 class="b-card-title">Official Curriculum Vitae</h3>
-            <p class="b-card-desc">
-              Generate a clean, print-ready document or export an official academic record for grant review and institutional assessment.
-            </p>
-            <button id="download-cv-btn" class="b-btn b-btn--blue" onclick="window.print()" style="margin-top: auto;">
-              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              <span>Download &amp; Print CV</span>
-            </button>
-          </article>
-        </div>
+          <!-- Drawer 1: Academic Career -->
+          <div class="glass-folder-drawer" data-folder-index="1">
+            <p class="drawer-heading">Academic Career &amp; Teaching Record</p>
+            <div class="drawer-bento-grid">
+              <div class="b-card b-card--blue">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--white">Experience</span></div>
+                <h3 class="b-card-title">18+ Years in Higher Education</h3>
+                <p class="b-card-desc">Near two decades of university-level instruction spanning Pure Mathematics, Numerical Analysis, Financial Mathematics, and General Studies (GST). Designed syllabi and advanced courses at both undergraduate and postgraduate levels.</p>
+                <div class="b-tags"><span class="b-tag">18+ Yrs</span><span class="b-tag">EKSU</span><span class="b-tag">UAD</span></div>
+              </div>
+              <div class="b-card b-card--white">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--blue">Mentoring</span></div>
+                <h3 class="b-card-title">Postgraduate Supervision</h3>
+                <p class="b-card-desc">Doctoral and master's thesis supervision covering stochastic differential equations, option pricing theory, mathematical epidemiology, and numerical analysis. Mentored multiple successful M.Sc. and Ph.D. graduates.</p>
+                <div class="b-tags"><span class="b-tag">Ph.D. Mentor</span><span class="b-tag">M.Sc. Theses</span></div>
+              </div>
+            </div>
+          </div><!-- /drawer 1 -->
+
+          <!-- Drawer 2: Professional Service -->
+          <div class="glass-folder-drawer" data-folder-index="2">
+            <p class="drawer-heading">Professional Service &amp; Governance</p>
+            <div class="drawer-bento-grid drawer-bento-grid--3">
+              <div class="b-card b-card--navy">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--gold">Admin</span></div>
+                <h3 class="b-card-title">Deputy Director (ORDI)</h3>
+                <p class="b-card-desc">Office of Research, Development and Innovation leadership driving grants, commercialization, and interdisciplinary collaboration at EKSU.</p>
+                <div class="b-tags"><span class="b-tag">ORDI</span><span class="b-tag">Research Admin</span></div>
+              </div>
+              <div class="b-card b-card--white">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--blue">Compliance</span></div>
+                <h3 class="b-card-title">Data Protection Officer</h3>
+                <p class="b-card-desc">Statutory university DPO ensuring data governance, NDPR compliance, and digital privacy frameworks across all faculties and research units.</p>
+                <div class="b-tags"><span class="b-tag">DPO</span><span class="b-tag">NDPR</span></div>
+              </div>
+              <div class="b-card b-card--blue">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--white">Editorial</span></div>
+                <h3 class="b-card-title">Peer Review &amp; Journal Editing</h3>
+                <p class="b-card-desc">Active reviewer and editorial board member for international mathematics journals including Elsevier, Springer, and AMU-affiliated publications.</p>
+                <div class="b-tags"><span class="b-tag">Reviewer</span><span class="b-tag">Editorial Board</span></div>
+              </div>
+            </div>
+          </div><!-- /drawer 2 -->
+
+        </div><!-- /cv-folder-drawers -->
 
         <!-- Verified Researcher Identifiers Strip -->
         <div class="cv-identifiers-strip" style="background: rgba(20,27,84,0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 1rem 1.4rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.85rem;">

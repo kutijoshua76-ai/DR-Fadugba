@@ -516,6 +516,7 @@
     let isOpen = false;
 
     function setOpen(open) {
+      if (isOpen === open) return;
       isOpen = open;
       if (isOpen) {
         root.setAttribute("data-open", "");
@@ -528,23 +529,37 @@
         hitBtn.setAttribute("aria-label", `Open ${label}, ${metaLine}`);
         filesContainer.setAttribute("inert", "");
       }
+      root.dispatchEvent(new CustomEvent("gf-toggle", { detail: { open: isOpen, index: options.index ?? -1 } }));
     }
 
-    hitBtn.addEventListener("click", () => {
+    root._setOpen = setOpen;
+    root._isOpen = () => isOpen;
+
+    // Make entire folder clickable to open/close
+    root.addEventListener("click", (e) => {
+      // Don't intercept if clicking an actual file anchor link
+      const sheet = e.target.closest(".gf-sheet");
+      if (sheet && (sheet.tagName === "A" || sheet.getAttribute("href"))) {
+        return; // Allow native link navigation
+      }
       setOpen(!isOpen);
     });
 
-    // Close on Escape or outside click
+    // Close on Escape
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && isOpen) {
         setOpen(false);
         hitBtn.focus();
       }
     });
+
+    // Close on outside click (excluding drawers, showcase, and other folders)
     document.addEventListener("pointerdown", (e) => {
-      if (isOpen && !root.contains(e.target)) {
-        setOpen(false);
-      }
+      if (!isOpen) return;
+      if (root.contains(e.target)) return;
+      if (e.target.closest(".glass-folder-drawers-wrap") || e.target.closest(".glass-folders-showcase-wrap") || e.target.closest(".glass-folder-drawer")) return;
+      if (e.target.closest(".gf-root")) return;
+      setOpen(false);
     });
 
     // Entrance Animation with IntersectionObserver
@@ -570,6 +585,84 @@
   window.GlassFolder = {
     create: createGlassFolder,
     presets: ART_PRESETS,
+  };
+
+  /**
+   * setupFolderDrawers(showcaseId, drawersWrapId, defaultOpenIndex)
+   *
+   * Links each .gf-root inside the showcase to a matching
+   * .glass-folder-drawer[data-folder-index] inside the drawers wrap.
+   * Clicking any folder opens it in 3D and reveals its embedded drawer.
+   * By default, folder 0 is opened so cards are visible immediately.
+   */
+  window.setupFolderDrawers = function setupFolderDrawers(showcaseId, drawersWrapId, defaultOpenIndex = 0) {
+    const showcase = document.getElementById(showcaseId);
+    const wrap = document.getElementById(drawersWrapId);
+    if (!showcase || !wrap) return;
+
+    const folders = Array.from(showcase.querySelectorAll(".gf-root"));
+    const drawers = Array.from(wrap.querySelectorAll(".glass-folder-drawer"));
+    let activeIdx = -1;
+
+    function activateDrawer(idx) {
+      if (activeIdx === idx) {
+        // Toggle close if already active
+        const f = folders[idx];
+        const d = drawers[idx];
+        if (f) {
+          f.classList.remove("is-active-drawer");
+          if (f._setOpen) f._setOpen(false);
+        }
+        if (d) d.classList.remove("is-open");
+        activeIdx = -1;
+        return;
+      }
+
+      // Activate new index
+      folders.forEach((f, i) => {
+        if (i === idx) {
+          f.classList.add("is-active-drawer");
+          if (f._setOpen) f._setOpen(true);
+        } else {
+          f.classList.remove("is-active-drawer");
+          if (f._setOpen) f._setOpen(false);
+        }
+      });
+
+      drawers.forEach((d, i) => {
+        if (i === idx) {
+          d.classList.add("is-open");
+          d.style.animation = "none";
+          d.offsetHeight; // reflow
+          d.style.animation = "";
+        } else {
+          d.classList.remove("is-open");
+        }
+      });
+
+      activeIdx = idx;
+    }
+
+    folders.forEach((folder, idx) => {
+      folder.addEventListener("gf-toggle", (e) => {
+        if (e.detail.open) {
+          if (activeIdx !== idx) activateDrawer(idx);
+        } else {
+          if (activeIdx === idx) {
+            folder.classList.remove("is-active-drawer");
+            if (drawers[idx]) drawers[idx].classList.remove("is-open");
+            activeIdx = -1;
+          }
+        }
+      });
+    });
+
+    // Open first folder by default so cards are visible immediately on load
+    if (defaultOpenIndex >= 0 && folders[defaultOpenIndex]) {
+      setTimeout(() => {
+        activateDrawer(defaultOpenIndex);
+      }, 100);
+    }
   };
 
   // Auto-mount folders on page containers when DOM is loaded
@@ -616,6 +709,11 @@
           { name: "Academic Desk", meta: "Formal Inquiries", art: "ember", href: "contact.html" }
         ]
       }));
+
+      // Wire up folder → drawer links for the home page
+      setTimeout(function() {
+        setupFolderDrawers("home-glass-folders", "home-folder-drawers");
+      }, 0);
     }
 
     // 2. About Page Folders
@@ -660,6 +758,11 @@
           { name: "GST Directorate", meta: "Coordination & Curriculum", art: "verdant" }
         ]
       }));
+
+      // Wire up folder → drawer links for about page
+      setTimeout(function() {
+        setupFolderDrawers("about-glass-folders", "about-folder-drawers");
+      }, 0);
     }
 
     // 3. Research Page Folders
@@ -704,6 +807,11 @@
           { name: "Deep PINNs", meta: "Physics-Informed Neural Nets", art: "dusk" }
         ]
       }));
+
+      // Wire up folder → drawer links for research page
+      setTimeout(function() {
+        setupFolderDrawers("research-glass-folders", "research-folder-drawers");
+      }, 0);
     }
 
     // 4. Publications Page Folders
@@ -748,6 +856,11 @@
           { name: "Deep PINNs (2024)", meta: "12 Citations · IEEE Conference", art: "glacier" }
         ]
       }));
+
+      // Wire up folder → drawer links for publications page
+      setTimeout(function() {
+        setupFolderDrawers("publications-glass-folders", "publications-folder-drawers");
+      }, 0);
     }
 
     // 5. Awards Page Folders
@@ -792,6 +905,11 @@
           { name: "Plenary Keynotes", meta: "Invited Applied Math Lectures", art: "ember" }
         ]
       }));
+
+      // Wire up folder → drawer links for awards page
+      setTimeout(function() {
+        setupFolderDrawers("awards-glass-folders", "awards-folder-drawers");
+      }, 0);
     }
 
     // 6. CV Page Folders
@@ -836,6 +954,11 @@
           { name: "Peer Review & Editing", meta: "International Mathematics Journals", art: "glacier" }
         ]
       }));
+
+      // Wire up folder → drawer links for cv page
+      setTimeout(function() {
+        setupFolderDrawers("cv-glass-folders", "cv-folder-drawers");
+      }, 0);
     }
 
     // 7. Contact Page Folders
@@ -880,6 +1003,11 @@
           { name: "Speaking & Keynotes", meta: "Conference & Seminar Plenaries", art: "ember" }
         ]
       }));
+
+      // Wire up folder → drawer links for contact page
+      setTimeout(function() {
+        setupFolderDrawers("contact-glass-folders", "contact-folder-drawers");
+      }, 0);
     }
   });
 })();

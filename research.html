@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/glass-folder.css">
+  <link rel="stylesheet" href="css/folder-drawer.css">
 
   <style>
     /* ── Base ── */
@@ -367,122 +368,89 @@
         <div class="glass-folders-showcase-wrap">
           <div class="glass-folders-desk-dots" aria-hidden="true"></div>
           <div class="glass-folders-showcase" id="research-glass-folders"></div>
-          <p class="glass-folders-hint">Hover to lean &middot; Click to open dossiers &middot; Explore research files</p>
+          <p class="glass-folders-hint">Hover to lean &middot; Click folder to open &middot; Explore research files</p>
         </div>
 
-        <!-- ── BENTO GRID 1: 3-col ── -->
-        <div class="bento-grid-3">
+        <!-- Folder Drawers — research pillars embedded here -->
+        <div class="glass-folder-drawer-divider" aria-hidden="true"></div>
+        <div class="glass-folder-drawers-wrap" id="research-folder-drawers">
 
-          <!-- Card 01 — Blue, tall (row-span-2) -->
-          <article class="b-card b-card--blue row-span-2">
-            <span class="b-card-number">01</span>
-            <div class="b-card-icon">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+          <!-- Drawer 0: Financial Mathematics → Card 01 + Card 05 -->
+          <div class="glass-folder-drawer" data-folder-index="0">
+            <p class="drawer-heading">Financial Mathematics &amp; Calculus — Research Pillars</p>
+            <div class="drawer-bento-grid">
+              <article class="b-card b-card--blue">
+                <span class="b-card-number">01</span>
+                <div class="b-card-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+                </div>
+                <h3 class="b-card-title">Financial Mathematics &amp; Derivative Valuation</h3>
+                <p class="b-card-desc">Developing analytical Mellin transform representations and numerical PDE discretizations for option pricing under jump-diffusion and fractional Brownian motion models. Rigorous stability and convergence proofs ground every proposed scheme.</p>
+                <div class="b-tags"><span class="b-tag">Black-Scholes Models</span><span class="b-tag">Mellin Transform</span><span class="b-tag">Stochastic Volatility</span></div>
+              </article>
+              <article class="b-card b-card--navy">
+                <span class="b-card-number">05</span>
+                <div class="b-card-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7z"/></svg>
+                </div>
+                <h3 class="b-card-title">Fractional Calculus &amp; Solitary Wave Solutions</h3>
+                <p class="b-card-desc">Investigating non-linear fractional differential operators with memory effects via the Adomian Decomposition Method and homotopy perturbation schemes to derive exact soliton families.</p>
+                <div class="b-tags"><span class="b-tag">Fractional PDEs</span><span class="b-tag">Adomian Method</span><span class="b-tag">Solitons</span></div>
+              </article>
             </div>
-            <h3 class="b-card-title">Financial Mathematics &amp; Derivative Valuation</h3>
-            <p class="b-card-desc">
-              Developing analytical Mellin transform representations and numerical PDE discretizations for option pricing under jump-diffusion and fractional Brownian motion models. Rigorous stability and convergence proofs ground every proposed scheme.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Black-Scholes Models</span>
-              <span class="b-tag">Mellin Transform</span>
-              <span class="b-tag">Stochastic Volatility</span>
-            </div>
-          </article>
+          </div><!-- /drawer 0 -->
 
-          <!-- Card 02 — White -->
-          <article class="b-card b-card--white">
-            <span class="b-card-number">02</span>
-            <div class="b-card-icon">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <!-- Drawer 1: Numerical Methods → Card 02 + Card 06 -->
+          <div class="glass-folder-drawer" data-folder-index="1">
+            <p class="drawer-heading">Numerical Methods &amp; Quantitative Risk — Research Pillars</p>
+            <div class="drawer-bento-grid">
+              <article class="b-card b-card--white">
+                <span class="b-card-number">02</span>
+                <div class="b-card-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <h3 class="b-card-title">High-Order Numerical Schemes for SDEs &amp; PDEs</h3>
+                <p class="b-card-desc">Constructing unconditionally stable Runge-Kutta and finite difference methods for stiff non-linear stochastic systems, establishing rigorous convergence bounds and consistency order.</p>
+                <div class="b-tags"><span class="b-tag">Numerical Analysis</span><span class="b-tag">Finite Difference</span><span class="b-tag">Error Analysis</span></div>
+              </article>
+              <article class="b-card b-card--blue">
+                <span class="b-card-number">06</span>
+                <div class="b-card-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/></svg>
+                </div>
+                <h3 class="b-card-title">Quantitative Risk Assessment for Emerging Markets</h3>
+                <p class="b-card-desc">Applying quantitative scenario simulations, Value-at-Risk (VaR) techniques, and econometric forecasting models to sovereign debt and foreign exchange instabilities.</p>
+                <div class="b-tags"><span class="b-tag">Econometrics</span><span class="b-tag">Risk Assessment</span><span class="b-tag">Market Volatility</span></div>
+              </article>
             </div>
-            <h3 class="b-card-title">High-Order Numerical Schemes for SDEs &amp; PDEs</h3>
-            <p class="b-card-desc">
-              Constructing unconditionally stable Runge-Kutta and finite difference methods for stiff non-linear stochastic systems, establishing rigorous convergence bounds and consistency order.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Numerical Analysis</span>
-              <span class="b-tag">Finite Difference</span>
-              <span class="b-tag">Error Analysis</span>
-            </div>
-          </article>
+          </div><!-- /drawer 1 -->
 
-          <!-- Card 03 — Navy -->
-          <article class="b-card b-card--navy">
-            <span class="b-card-number">03</span>
-            <div class="b-card-icon">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          <!-- Drawer 2: Epidemiology & AI → Card 03 + Card 04 -->
+          <div class="glass-folder-drawer" data-folder-index="2">
+            <p class="drawer-heading">Epidemiology &amp; AI-Driven Mathematics — Research Pillars</p>
+            <div class="drawer-bento-grid">
+              <article class="b-card b-card--navy">
+                <span class="b-card-number">03</span>
+                <div class="b-card-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                </div>
+                <h3 class="b-card-title">Mathematical Epidemiology &amp; Population Dynamics</h3>
+                <p class="b-card-desc">Formulating deterministic and stochastic compartmental models (SEIR/SIRS) with non-linear incidence rates, optimal control protocols, and parameter estimation from clinical surveillance.</p>
+                <div class="b-tags"><span class="b-tag">Epidemic Models</span><span class="b-tag">Optimal Control</span><span class="b-tag">Stability Analysis</span></div>
+              </article>
+              <article class="b-card b-card--light-blue">
+                <span class="b-card-number">04</span>
+                <div class="b-card-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 class="b-card-title">Physics-Informed Neural Networks (PINNs)</h3>
+                <p class="b-card-desc">Integrating deep neural architectures with physical conservation laws and differential equations to solve inverse boundary value problems with sparse observational datasets.</p>
+                <div class="b-tags"><span class="b-tag">Scientific ML</span><span class="b-tag">Deep Learning</span><span class="b-tag">Inverse Problems</span></div>
+              </article>
             </div>
-            <h3 class="b-card-title">Mathematical Epidemiology &amp; Population Dynamics</h3>
-            <p class="b-card-desc">
-              Formulating deterministic and stochastic compartmental models (SEIR/SIRS) with non-linear incidence rates, optimal control protocols, and parameter estimation from clinical surveillance.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Epidemic Models</span>
-              <span class="b-tag">Optimal Control</span>
-              <span class="b-tag">Stability Analysis</span>
-            </div>
-          </article>
+          </div><!-- /drawer 2 -->
 
-          <!-- Card 04 — Light-Blue (row 2, cols 2-3 area) -->
-          <article class="b-card b-card--light-blue">
-            <span class="b-card-number">04</span>
-            <div class="b-card-icon">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            </div>
-            <h3 class="b-card-title">Physics-Informed Neural Networks (PINNs)</h3>
-            <p class="b-card-desc">
-              Integrating deep neural architectures with physical conservation laws and differential equations to solve inverse boundary value problems with sparse observational datasets.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Scientific ML</span>
-              <span class="b-tag">Deep Learning</span>
-              <span class="b-tag">Inverse Problems</span>
-            </div>
-          </article>
-
-        </div>
-        <!-- /bento-grid-3 -->
-
-        <!-- ── BENTO GRID 2: 2-col ── -->
-        <div class="bento-grid-2">
-
-          <!-- Card 05 — Navy wide -->
-          <article class="b-card b-card--navy">
-            <span class="b-card-number">05</span>
-            <div class="b-card-icon">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7z"/></svg>
-            </div>
-            <h3 class="b-card-title">Fractional Calculus &amp; Solitary Wave Solutions</h3>
-            <p class="b-card-desc">
-              Investigating non-linear fractional differential operators with memory effects via the Adomian Decomposition Method and homotopy perturbation schemes to derive exact soliton families.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Fractional PDEs</span>
-              <span class="b-tag">Adomian Method</span>
-              <span class="b-tag">Solitons</span>
-            </div>
-          </article>
-
-          <!-- Card 06 — Blue -->
-          <article class="b-card b-card--blue">
-            <span class="b-card-number">06</span>
-            <div class="b-card-icon">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/></svg>
-            </div>
-            <h3 class="b-card-title">Quantitative Risk Assessment for Emerging Markets</h3>
-            <p class="b-card-desc">
-              Applying quantitative scenario simulations, Value-at-Risk (VaR) techniques, and econometric forecasting models to sovereign debt and foreign exchange instabilities.
-            </p>
-            <div class="b-tags">
-              <span class="b-tag">Econometrics</span>
-              <span class="b-tag">Risk Assessment</span>
-              <span class="b-tag">Market Volatility</span>
-            </div>
-          </article>
-
-        </div>
-        <!-- /bento-grid-2 -->
+        </div><!-- /research-folder-drawers -->
 
         <!-- ── CTA ROW ── -->
         <div class="bento-grid-2">

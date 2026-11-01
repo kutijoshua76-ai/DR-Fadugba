@@ -15,7 +15,7 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/glass-folder.css">
+  <link rel="stylesheet" href="css/glass-folder.css">`n  <link rel="stylesheet" href="css/folder-drawer.css">
 
   <style>
     /* ===================================================================
@@ -511,126 +511,157 @@
         <div class="glass-folders-showcase-wrap">
           <div class="glass-folders-desk-dots" aria-hidden="true"></div>
           <div class="glass-folders-showcase" id="awards-glass-folders"></div>
-          <p class="glass-folders-hint">Hover to lean &middot; Click to open dossiers &middot; Explore honors and fellowships</p>
+          <p class="glass-folders-hint">Hover to lean &middot; Click folder to open &middot; Explore honors and fellowships</p>
         </div>
 
-        <!-- GRID 1: Featured Honor & Photo Stack -->
-        <div class="bento-grid bento-grid-1">
+        <!-- Folder Drawers — awards embedded here -->
+        <div class="glass-folder-drawer-divider" aria-hidden="true"></div>
+        <div class="glass-folder-drawers-wrap" id="awards-folder-drawers">
 
-          <!-- LEFT: Featured Blue Card -->
-          <div class="b-card b-card--blue">
-            <span class="star-icon">⭐</span>
-            <span class="tag tag--gold">2026 / CONFERRED</span>
-            <h2 class="featured-award-name">Distinguished University Research Award</h2>
-            <p class="featured-institution">Ekiti State University, Ado Ekiti (EKSU)</p>
-            <blockquote class="featured-blockquote">
-              &ldquo;Conferred in recognition of distinguished scholarship, groundbreaking research output in mathematical sciences, and impactful contributions toward advancing university-wide innovation and research development.&rdquo;
-            </blockquote>
-            <div class="tribute-grid">
-              <div class="tribute-item">
-                <h4>🎖️ Recognition Earned</h4>
-                <p>Rigorous research and continuous dedication acknowledged by university leadership.</p>
+          <!-- Drawer 0: Fellowships & Honors -->
+          <div class="glass-folder-drawer" data-folder-index="0">
+            <p class="drawer-heading">Fellowships &amp; Honorary Titles</p>
+            <div class="drawer-bento-grid drawer-bento-grid--3">
+              <div class="b-card b-card--navy">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--gold">Fellowship</span></div>
+                <h3 class="b-card-title">Fellow of African Scientific Institute (FASI)</h3>
+                <p class="b-card-desc">Elected Fellowship recognizing outstanding contributions to African scientific advancement and applied mathematics research.</p>
+                <div class="b-tags"><span class="b-tag">FASI</span><span class="b-tag">Africa</span></div>
               </div>
-              <div class="tribute-item">
-                <h4>🧮 Expertise Shown</h4>
-                <p>Deep mathematical expertise in stochastic modeling, ODEs/PDEs.</p>
+              <div class="b-card b-card--blue">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--white">Fellowship</span></div>
+                <h3 class="b-card-title">Fellow of AFAAN</h3>
+                <p class="b-card-desc">African Academic and Alumni Network fellowship acknowledging distinguished service to mathematical scholarship and university education.</p>
+                <div class="b-tags"><span class="b-tag">AFAAN</span><span class="b-tag">Academic Network</span></div>
               </div>
-              <div class="tribute-item">
-                <h4>📚 Hard Work Pays Off</h4>
-                <p>Over 70+ published scientific papers in international peer-reviewed journals.</p>
-              </div>
-              <div class="tribute-item">
-                <h4>🌟 Lasting Impact</h4>
-                <p>Inspiring early-career faculty and graduate research cohorts across the institution.</p>
+              <div class="b-card b-card--white">
+                <div class="b-card-header"><span class="b-card-badge b-card-badge--blue">Memberships</span></div>
+                <h3 class="b-card-title">Learned Society Memberships</h3>
+                <p class="b-card-desc">Active memberships: MNSPS, MAGES, CMACSP — promoting mathematical sciences in Nigeria and globally.</p>
+                <div class="b-tags"><span class="b-tag">MNSPS</span><span class="b-tag">MAGES</span><span class="b-tag">CMACSP</span></div>
               </div>
             </div>
-          </div>
+          </div><!-- /drawer 0 -->
 
-          <!-- RIGHT: Photo Stack -->
-          <div class="photo-stack">
-            <div class="b-card b-card--navy">
-              <div class="photo-card">
-                <img src="assets/images/award_presentation.jpg" alt="Award Presentation" onclick="openModal('assets/images/award_presentation.jpg','Official Award Conferment on Stage')" />
-                <span class="photo-badge">Stage Presentation</span>
+          <!-- Drawer 1: Research Laurels -->
+          <div class="glass-folder-drawer" data-folder-index="1">
+            <p class="drawer-heading">Research Excellence Awards &amp; University Honors</p>
+            
+            <!-- Featured Honor & Photo Stack -->
+            <div class="bento-grid bento-grid-1" style="margin-bottom: 1.5rem;">
+              <!-- LEFT: Featured Blue Card -->
+              <div class="b-card b-card--blue">
+                <span class="star-icon">⭐</span>
+                <span class="tag tag--gold">2026 / CONFERRED</span>
+                <h2 class="featured-award-name">Distinguished University Research Award</h2>
+                <p class="featured-institution">Ekiti State University, Ado Ekiti (EKSU)</p>
+                <blockquote class="featured-blockquote">
+                  &ldquo;Conferred in recognition of distinguished scholarship, groundbreaking research output in mathematical sciences, and impactful contributions toward advancing university-wide innovation and research development.&rdquo;
+                </blockquote>
+                <div class="tribute-grid">
+                  <div class="tribute-item">
+                    <h4>🎖️ Recognition Earned</h4>
+                    <p>Rigorous research and continuous dedication acknowledged by university leadership.</p>
+                  </div>
+                  <div class="tribute-item">
+                    <h4>🧮 Expertise Shown</h4>
+                    <p>Deep mathematical expertise in stochastic modeling, ODEs/PDEs.</p>
+                  </div>
+                  <div class="tribute-item">
+                    <h4>📚 Hard Work Pays Off</h4>
+                    <p>Over 70+ published scientific papers in international peer-reviewed journals.</p>
+                  </div>
+                  <div class="tribute-item">
+                    <h4>🌟 Lasting Impact</h4>
+                    <p>Inspiring early-career faculty and graduate research cohorts across the institution.</p>
+                  </div>
+                </div>
               </div>
-              <p class="photo-caption-title">Official Award Conferment on Stage</p>
-              <p class="photo-caption-desc">Dr. Fadugba receiving the Research Award certificate and plaque from university dignitaries during the formal awards assembly.</p>
-            </div>
-            <div class="b-card b-card--navy">
-              <div class="photo-card">
-                <img src="assets/images/award_ceremony.jpg" alt="Award Ceremony" onclick="openModal('assets/images/award_ceremony.jpg','Dr. Fadugba with Certificate & Trophy Plaque')" />
-                <span class="photo-badge">Award Laureate</span>
+
+              <!-- RIGHT: Photo Stack -->
+              <div class="photo-stack">
+                <div class="b-card b-card--navy">
+                  <div class="photo-card">
+                    <img src="assets/images/award_presentation.jpg" alt="Award Presentation" onclick="openModal('assets/images/award_presentation.jpg','Official Award Conferment on Stage')" />
+                    <span class="photo-badge">Stage Presentation</span>
+                  </div>
+                  <p class="photo-caption-title">Official Award Conferment on Stage</p>
+                  <p class="photo-caption-desc">Dr. Fadugba receiving the Research Award certificate and plaque from university dignitaries during the formal awards assembly.</p>
+                </div>
+                <div class="b-card b-card--navy">
+                  <div class="photo-card">
+                    <img src="assets/images/award_ceremony.jpg" alt="Award Ceremony" onclick="openModal('assets/images/award_ceremony.jpg','Dr. Fadugba with Certificate & Trophy Plaque')" />
+                    <span class="photo-badge">Award Laureate</span>
+                  </div>
+                  <p class="photo-caption-title">Dr. Fadugba with Certificate &amp; Trophy Plaque</p>
+                  <p class="photo-caption-desc">Proudly displaying his Certificate of Award and crystal trophy plaque following the university conferment ceremony.</p>
+                </div>
               </div>
-              <p class="photo-caption-title">Dr. Fadugba with Certificate &amp; Trophy Plaque</p>
-              <p class="photo-caption-desc">Proudly displaying his Certificate of Award and crystal trophy plaque following the university conferment ceremony.</p>
+            </div>
+
+            <div class="drawer-bento-grid drawer-bento-grid--3">
+              <div class="b-card b-card--white">
+                <div class="award-year">2024</div>
+                <div class="award-name">Best Paper Award in Applied Mathematics</div>
+                <div class="award-org">IEEE International Conference on Data Science</div>
+                <div class="award-desc">For breakthrough contributions on deep physics-informed neural solvers and computational PDEs.</div>
+              </div>
+              <div class="b-card b-card--light-blue">
+                <div class="award-year">2023</div>
+                <div class="award-name">University Teaching Excellence Award</div>
+                <div class="award-org">Faculty Board of Science</div>
+                <div class="award-desc">Distinguished classroom pedagogy and student evaluation scores above 96%.</div>
+              </div>
+              <div class="b-card b-card--navy">
+                <div class="award-year">2020</div>
+                <div class="award-name">Outstanding Peer Reviewer Recognition</div>
+                <div class="award-org">Journal of Computational and Applied Mathematics (Elsevier)</div>
+                <div class="award-desc">Ranked among top 5% international peer reviewers for mathematical rigor and timely evaluations.</div>
+              </div>
+            </div>
+          </div><!-- /drawer 1 -->
+
+          <!-- Drawer 2: Grants & Keynotes -->
+          <div class="glass-folder-drawer" data-folder-index="2">
+            <p class="drawer-heading">Grants, Sponsorships &amp; Visiting Fellowships</p>
+            <div class="drawer-bento-grid drawer-bento-grid--3">
+              <div class="b-card b-card--blue">
+                <div class="award-year">2021</div>
+                <div class="award-name">TETFUND National Research Fund Lead Investigator</div>
+                <div class="award-org">Tertiary Education Trust Fund</div>
+                <div class="award-desc">Principal Investigator for mathematical computational models, awarded national research funding.</div>
+              </div>
+              <div class="b-card b-card--navy">
+                <div class="award-year">2022</div>
+                <div class="award-name">African Mathematical Union Research Grant</div>
+                <div class="award-org">AMU Commission on Research &amp; Capacity</div>
+                <div class="award-desc">Multi-year competitive research grant for innovative work in fractional differential systems.</div>
+              </div>
+              <div class="b-card b-card--white">
+                <div class="award-year">2018</div>
+                <div class="award-name">International Visiting Scholar Fellow</div>
+                <div class="award-org">Centre for Mathematical Modeling and Computation</div>
+                <div class="award-desc">Prestigious fellowship enabling joint symposium lectures, collaborative research, and international exchange.</div>
+              </div>
+            </div>
+          </div><!-- /drawer 2 -->
+
+        </div><!-- /awards-folder-drawers -->
+
+        <!-- CTA ROW -->
+        <div class="bento-grid bento-grid-2" style="margin-top: 2rem;">
+          <div class="b-card b-card--blue">
+            <div class="cta-card-title" style="color:#fff;">Scholarly Contributions</div>
+            <p class="cta-card-desc" style="color:rgba(255,255,255,0.85);">Explore over 70+ peer-reviewed publications and 1,550+ citations indexed on Google Scholar, Scopus, and MathSciNet.</p>
+            <div class="btn-row" style="margin-top: 1.2rem;">
+              <a href="publications.html" class="btn-pill btn-pill--white" style="background:#fff; color:#0f1240; font-weight:700; text-decoration:none; padding:0.6rem 1.2rem; border-radius:100px;">View Publications &rarr;</a>
             </div>
           </div>
-
-        </div>
-
-        <!-- Section 2 Heading -->
-        <p class="bento-section-label" style="margin-top: 3.5rem;">Complete Portfolio</p>
-        <h2 class="bento-section-heading">Distinctions, Grants &amp; <span>Fellowships</span></h2>
-
-        <!-- GRID 2: Awards 1-3 (3-col) -->
-        <div class="bento-grid bento-grid-3">
-          <div class="b-card b-card--blue">
-            <span class="star-icon">⭐</span>
-            <div class="award-year">2026</div>
-            <div class="award-name">Distinguished University Research Award</div>
-            <div class="award-org">Ekiti State University, Ado Ekiti</div>
-            <div class="award-desc">Highest institutional research recognition, conferred for outstanding contribution to mathematical sciences and university innovation.</div>
-          </div>
           <div class="b-card b-card--white">
-            <div class="award-year">2024</div>
-            <div class="award-name">Best Paper Award in Applied Mathematics</div>
-            <div class="award-org">IEEE International Conference on Data Science &amp; Computing</div>
-            <div class="award-desc">For breakthrough contributions on deep physics-informed neural solvers and their applications in computational PDEs.</div>
-          </div>
-          <div class="b-card b-card--light-blue">
-            <div class="award-year">2023</div>
-            <div class="award-name">University Teaching Excellence Award</div>
-            <div class="award-org">Faculty Board of Science</div>
-            <div class="award-desc">Distinguished classroom pedagogy and student evaluation scores above 96%, recognizing exceptional dedication to academic instruction.</div>
-          </div>
-        </div>
-
-        <!-- GRID 3: Awards 4-6 (3-col) -->
-        <div class="bento-grid bento-grid-3">
-          <div class="b-card b-card--navy">
-            <div class="award-year">2022</div>
-            <div class="award-name">African Mathematical Union Research Grant</div>
-            <div class="award-org">AMU Commission on Research &amp; Capacity</div>
-            <div class="award-desc">Multi-year competitive research grant awarded for innovative work in fractional differential systems and applied mathematics capacity building.</div>
-          </div>
-          <div class="b-card b-card--white">
-            <div class="award-year">2021</div>
-            <div class="award-name">TETFUND National Research Fund (NRF) Lead Investigator</div>
-            <div class="award-org">Tertiary Education Trust Fund</div>
-            <div class="award-desc">Principal Investigator for mathematical computational models, awarded national research funding for high-impact academic output.</div>
-          </div>
-          <div class="b-card b-card--light-blue">
-            <div class="award-year">2020</div>
-            <div class="award-name">Outstanding Peer Reviewer Recognition</div>
-            <div class="award-org">Journal of Computational and Applied Mathematics (Elsevier)</div>
-            <div class="award-desc">Ranked among the top 5% of international peer reviewers for rigor, timeliness, and constructive scientific feedback.</div>
-          </div>
-        </div>
-
-        <!-- GRID 4: Award 7 & CTA Card (2-col) -->
-        <div class="bento-grid bento-grid-2">
-          <div class="b-card b-card--blue">
-            <div class="award-year">2018</div>
-            <div class="award-name">International Visiting Scholar Fellow</div>
-            <div class="award-org">Centre for Mathematical Modeling and Computation</div>
-            <div class="award-desc">Prestigious fellowship enabling joint symposium lectures, collaborative research, and international scholarly exchange programs.</div>
-          </div>
-          <div class="b-card b-card--white">
-            <div class="cta-card-title">Explore Research Output</div>
-            <p class="cta-card-desc">Dive into 70+ publications spanning stochastic differential equations, numerical methods, and applied mathematical modeling.</p>
-            <div class="btn-row">
-              <a href="publications.html" class="btn-pill btn-pill--primary">View Publications</a>
-              <a href="research.html" class="btn-pill btn-pill--outline">Research Domains</a>
+            <div class="cta-card-title" style="color:#0f1240;">Connect &amp; Collaborate</div>
+            <p class="cta-card-desc" style="color:#4a5568;">Propose joint international research, conference keynote speaking engagements, or graduate advising inquiries.</p>
+            <div class="btn-row" style="margin-top: 1.2rem;">
+              <a href="contact.html" class="btn-pill btn-pill--primary" style="background:#3b48d4; color:#fff; font-weight:700; text-decoration:none; padding:0.6rem 1.2rem; border-radius:100px;">Get in Touch &rarr;</a>
             </div>
           </div>
         </div>
