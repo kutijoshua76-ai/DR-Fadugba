@@ -108,15 +108,25 @@ document.addEventListener("DOMContentLoaded", () => {
     statsObserver.observe(statsSection);
   }
 
-  // Contact Form Handling with Interactive Feedback
+  // Contact Form Handling with Live Delivery to sunday.fadugba@eksu.edu.ng
   const contactForm = document.getElementById("academic-contact-form");
   const formStatus = document.getElementById("form-status");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector("button[type='submit']");
-      const originalText = submitBtn.innerHTML;
+      const originalBtnHtml = submitBtn.innerHTML;
+
+      const nameInput = document.getElementById("contact-name");
+      const emailInput = document.getElementById("contact-email");
+      const subjectSelect = document.getElementById("contact-subject");
+      const messageInput = document.getElementById("contact-message");
+
+      const name = nameInput ? nameInput.value.trim() : "";
+      const email = emailInput ? emailInput.value.trim() : "";
+      const domain = subjectSelect && subjectSelect.selectedIndex >= 0 ? subjectSelect.options[subjectSelect.selectedIndex].text : "General Inquiry";
+      const message = messageInput ? messageInput.value.trim() : "";
 
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
@@ -124,26 +134,70 @@ document.addEventListener("DOMContentLoaded", () => {
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
         </svg>
-        <span>Sending Message...</span>
+        <span>Transmitting to Dr. Fadugba's Desk...</span>
       `;
 
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        contactForm.reset();
-        
+      try {
+        const payload = {
+          name: name,
+          email: email,
+          inquiry_domain: domain,
+          message: message,
+          _subject: `Academic Inquiry: ${domain} (from ${name})`,
+          _template: "table",
+          _captcha: "false"
+        };
+
+        const response = await fetch("https://formsubmit.co/ajax/sunday.fadugba@eksu.edu.ng", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          if (formStatus) {
+            formStatus.innerHTML = `
+              <div class="alert success">
+                <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                  <strong>Inquiry Dispatched Successfully!</strong><br>
+                  Your message has been delivered directly to Dr. Sunday Emmanuel Fadugba's official institutional address (<code>sunday.fadugba@eksu.edu.ng</code>). A notification has been sent to his desk.
+                </div>
+              </div>
+            `;
+            setTimeout(() => {
+              if (formStatus) formStatus.innerHTML = "";
+            }, 10000);
+          }
+        } else {
+          throw new Error("HTTP error " + response.status);
+        }
+      } catch (err) {
+        // Fallback: If network is offline or service encounters an issue, provide 1-click mailto
+        const mailtoSubject = encodeURIComponent(`Academic Inquiry: ${domain} - ${name}`);
+        const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInquiry Domain: ${domain}\n\nMessage:\n${message}`);
+        const mailtoUrl = `mailto:sunday.fadugba@eksu.edu.ng?subject=${mailtoSubject}&body=${mailtoBody}`;
+
         if (formStatus) {
           formStatus.innerHTML = `
-            <div class="alert success">
-              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span>Thank you! Your academic inquiry has been received. Dr. Fadugba or the department research office will respond promptly.</span>
+            <div class="alert error">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              <div>
+                <strong>Alternative Direct Dispatch:</strong><br>
+                Direct transmission encountered a connection timeout. You can send this message directly via your email client to <strong>sunday.fadugba@eksu.edu.ng</strong>:<br>
+                <a href="${mailtoUrl}" class="b-btn-sm b-btn-sm--blue" style="display:inline-block; margin-top:0.6rem; padding:0.45rem 1.1rem; color:#fff; text-decoration:none;">Open in Mail Client &rarr;</a>
+              </div>
             </div>
           `;
-          setTimeout(() => {
-            formStatus.innerHTML = "";
-          }, 7000);
         }
-      }, 1200);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
     });
   }
 

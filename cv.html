@@ -1,21 +1,37 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curriculum Vitae of Dr. Sunday Emmanuel Fadugba — academic appointments, education, editorial roles, and professional affiliations.">
-  <meta name="author" content="Dr. S. E. Fadugba">
-  <title>CV | Dr. Fadugba — Lecturer, Researcher & Author</title>
+  <meta name="description" content="Curriculum Vitae of Dr. Sunday Emmanuel Fadugba, PhD — academic appointments, education, administrative leadership, and scholarly service.">
+  <meta name="keywords" content="Dr Fadugba CV, Sunday Emmanuel Fadugba, curriculum vitae, Ekiti State University, applied mathematics professor, academic profile">
+  <meta name="author" content="Dr. Sunday Emmanuel Fadugba, PhD">
+  <title>CV | Dr. Sunday Emmanuel FADUGBA, PhD — Academic Curriculum Vitae</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
+    /* ===================================================================
+       BENTO UI — CV PAGE
+       Deep navy background (#0f1240) + white/blue/light-blue rounded cards
+    =================================================================== */
+
+    body {
+      background-color: #0f1240;
+    }
+
+    /* ---- Page Hero ---- */
     .page-hero {
-      background: radial-gradient(circle at 65% 45%, #142858 0%, #0a1738 50%, #050d22 100%);
-      padding: calc(var(--header-height) + 4rem) 0 4rem;
+      background:
+        linear-gradient(rgba(10, 14, 60, 0.80), rgba(10, 14, 60, 0.85)),
+        url('assets/images/page-header-bg.png') center center / cover no-repeat;
+      padding: calc(var(--header-height, 80px) + 4.5rem) 0 4.5rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -24,18 +40,20 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
       background-size: 28px 28px;
       pointer-events: none;
     }
     .page-hero-tag {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: #f59e0b;
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
     .page-hero-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -43,8 +61,8 @@
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
+      line-height: 1.12;
+      margin-bottom: 0.85rem;
     }
     .page-hero-bar {
       width: 60px;
@@ -53,13 +71,371 @@
       border-radius: 3px;
       margin: 0 auto;
     }
-    .page-content {
-      padding: 6rem 0;
+
+    /* ---- Bento Section ---- */
+    .bento-section {
+      background: #0f1240;
+      padding: 4.5rem 0 5.5rem;
+    }
+    .bento-section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7c8aff;
+      margin-bottom: 0.6rem;
+    }
+    .bento-section-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+    .bento-section-sub {
+      color: #a5b4fc;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ---- Bento Grid Layouts ---- */
+    .bento-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .bento-grid-main {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .bento-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .bento-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* ---- Card Base ---- */
+    .b-card {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    .b-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    /* Card Variants */
+    .b-card--blue {
+      background: linear-gradient(135deg, #3b48d4 0%, #6470f3 60%, #8b94ff 100%);
+      color: #ffffff;
+      padding: 2.25rem;
+    }
+    .b-card--white {
+      background: #ffffff;
+      color: #0f1240;
+      padding: 2.25rem;
+    }
+    .b-card--light-blue {
+      background: linear-gradient(135deg, #eef0ff 0%, #dfe4ff 100%);
+      color: #0f1240;
+      padding: 2.25rem;
+    }
+    .b-card--navy {
+      background: #141b54;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ffffff;
+      padding: 2.25rem;
+    }
+
+    /* Stat Numbers */
+    .b-stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .b-card--blue .b-stat-number { color: #ffffff; }
+    .b-card--white .b-stat-number { color: #3b48d4; }
+    .b-card--light-blue .b-stat-number { color: #1e1b4b; }
+
+    .b-stat-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .b-card--blue .b-stat-label { color: #e0e7ff; }
+    .b-card--white .b-stat-label { color: #64748b; }
+    .b-card--light-blue .b-stat-label { color: #6366f1; }
+    .b-card--navy .b-stat-label { color: #7c8aff; }
+
+    .b-card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0.25rem 0 0.85rem;
+    }
+    .b-card--blue .b-card-title,
+    .b-card--navy .b-card-title { color: #ffffff; }
+    .b-card--white .b-card-title,
+    .b-card--light-blue .b-card-title { color: #0f1240; }
+
+    .b-card-desc {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .b-card--blue .b-card-desc { color: rgba(255,255,255,0.85); }
+    .b-card--navy .b-card-desc { color: rgba(255,255,255,0.78); }
+    .b-card--white .b-card-desc { color: #4a5568; }
+    .b-card--light-blue .b-card-desc { color: #3b4882; }
+
+    /* Tags / Pills */
+    .b-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+    }
+    .b-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .b-card--blue .b-tag,
+    .b-card--navy .b-tag {
+      background: rgba(255,255,255,0.12);
+      color: #e0e7ff;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+    .b-card--white .b-tag,
+    .b-card--light-blue .b-tag {
+      background: rgba(59,72,212,0.10);
+      color: #3b48d4;
+      border: 1px solid rgba(59,72,212,0.22);
+    }
+
+    /* ---- Bento Timeline Elements ---- */
+    .cv-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+    .b-card--navy .cv-section-header { color: #ffffff; }
+    .b-card--white .cv-section-header { color: #0f1240; }
+    .b-card--blue .cv-section-header { color: #ffffff; }
+    .b-card--light-blue .cv-section-header { color: #0f1240; }
+
+    .cv-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 2px solid rgba(255,255,255,0.15);
+      margin-bottom: 2rem;
+    }
+    .b-card--white .cv-timeline {
+      border-left-color: rgba(59,72,212,0.2);
+    }
+    .b-card--light-blue .cv-timeline {
+      border-left-color: rgba(59,72,212,0.2);
+    }
+
+    .cv-item {
+      position: relative;
+    }
+    .cv-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1.5rem - 6px);
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245,158,11,0.25);
+    }
+    .b-card--white .cv-item::before {
+      background: #3b48d4;
+      box-shadow: 0 0 0 3px rgba(59,72,212,0.2);
+    }
+    .b-card--blue .cv-item::before {
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+    }
+
+    .cv-date-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.4rem;
+    }
+    .b-card--navy .cv-date-badge {
+      background: rgba(255,255,255,0.12);
+      color: #cbd5e1;
+    }
+    .b-card--white .cv-date-badge {
+      background: #eff6ff;
+      color: #3b48d4;
+    }
+    .b-card--blue .cv-date-badge {
+      background: rgba(255,255,255,0.2);
+      color: #ffffff;
+    }
+    .b-card--light-blue .cv-date-badge {
+      background: rgba(59,72,212,0.12);
+      color: #3b48d4;
+    }
+
+    .cv-item-role {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.2rem;
+    }
+    .b-card--navy .cv-item-role { color: #ffffff; }
+    .b-card--white .cv-item-role { color: #0f1240; }
+    .b-card--blue .cv-item-role { color: #ffffff; }
+    .b-card--light-blue .cv-item-role { color: #0f1240; }
+
+    .cv-item-inst {
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .b-card--navy .cv-item-inst { color: #818cf8; }
+    .b-card--white .cv-item-inst { color: #3b48d4; }
+    .b-card--blue .cv-item-inst { color: #dbeafe; }
+    .b-card--light-blue .cv-item-inst { color: #4338ca; }
+
+    .cv-item-desc {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .b-card--navy .cv-item-desc { color: rgba(255,255,255,0.72); }
+    .b-card--white .cv-item-desc { color: #4b5563; }
+    .b-card--blue .cv-item-desc { color: rgba(255,255,255,0.85); }
+    .b-card--light-blue .cv-item-desc { color: #334155; }
+
+    /* ---- Buttons ---- */
+    .b-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      margin-top: 1.25rem;
+      align-self: flex-start;
+      border: none;
+      font-family: inherit;
+    }
+    .b-btn--white {
+      background: #ffffff;
+      color: #0f1240;
+    }
+    .b-btn--white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .b-btn--blue {
+      background: #3b48d4;
+      color: #ffffff;
+    }
+    .b-btn--blue:hover {
+      background: #2f3ab2;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(59,72,212,0.4);
+    }
+
+    /* ---- Print Styles ---- */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+      }
+      #site-header,
+      #site-footer,
+      .page-hero,
+      .b-btn,
+      .b-tags,
+      .bento-grid-2 {
+        display: none !important;
+      }
+      .bento-section {
+        padding: 0 !important;
+        background: transparent !important;
+      }
+      .b-card {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 1.5rem;
+      }
+      .b-card-title,
+      .cv-item-role,
+      .cv-section-header {
+        color: #000000 !important;
+      }
+      .cv-item-inst {
+        color: #2563eb !important;
+      }
+      .cv-item-desc {
+        color: #334155 !important;
+      }
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .bento-grid-3,
+      .bento-grid-main,
+      .bento-grid-2 {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- ── SITE HEADER ── -->
   <header id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-crest" aria-label="Dr. Sunday Emmanuel Fadugba Home">
@@ -100,6 +476,7 @@
   </header>
 
   <main>
+    <!-- ── PAGE HERO ── -->
     <div class="page-hero">
       <div class="container">
         <span class="page-hero-tag">Academic Trajectory</span>
@@ -108,194 +485,307 @@
       </div>
     </div>
 
-    <section class="page-content">
+    <!-- ── BENTO SECTION ── -->
+    <section class="bento-section">
       <div class="container">
-        <p class="section-subtitle page-subtitle-intro page-subtitle-intro--compact">
-          An overview of education, university appointments, leadership, and professional affiliations.
+        <p class="bento-section-label">Academic Profile &amp; Dossier</p>
+        <h2 class="bento-section-heading">Qualifications, Experience &amp; Service</h2>
+        <p class="bento-section-sub">
+          A documented record of professorial appointments, postgraduate mentorship, university governance, editorial directorships, and professional society contributions.
         </p>
 
-        <div class="cv-top-action">
-          <button id="download-cv-btn" class="btn btn-primary">
-            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-            <span>Download &amp; Print CV</span>
-          </button>
+        <!-- Top Stat Row (3-col Bento Grid) -->
+        <div class="bento-grid-3">
+          <!-- Card 1: Blue -->
+          <article class="b-card b-card--blue">
+            <span class="b-stat-label">Faculty Rank</span>
+            <div class="b-stat-number">2018–Pres.</div>
+            <h3 class="b-card-title">Senior Lecturer / Assoc. Professor</h3>
+            <p class="b-card-desc">
+              Department of Mathematical Sciences, Faculty of Science, Ekiti State University (EKSU), Ado Ekiti.
+            </p>
+            <div class="b-tags">
+              <span class="b-tag">Applied Mathematics</span>
+              <span class="b-tag">Ph.D. Supervision</span>
+              <span class="b-tag">Postgrad Coordinator</span>
+            </div>
+          </article>
+
+          <!-- Card 2: White -->
+          <article class="b-card b-card--white">
+            <span class="b-stat-label">Highest Qualification</span>
+            <div class="b-stat-number">Ph.D.</div>
+            <h3 class="b-card-title">Applied Mathematics</h3>
+            <p class="b-card-desc">
+              Specialized in Numerical Analysis and Stochastic Differential Equations with Financial Derivative Valuations.
+            </p>
+            <div class="b-tags">
+              <span class="b-tag">First Class Honours B.Sc.</span>
+              <span class="b-tag">Distinction M.Sc.</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Light Blue -->
+          <article class="b-card b-card--light-blue">
+            <span class="b-stat-label">Dossier Action</span>
+            <div class="b-stat-number" style="font-size: 2.1rem; padding-top: 0.35rem;">Print &amp; PDF</div>
+            <h3 class="b-card-title">Official Curriculum Vitae</h3>
+            <p class="b-card-desc">
+              Generate a clean, print-ready document or export an official academic record for grant review and institutional assessment.
+            </p>
+            <button id="download-cv-btn" class="b-btn b-btn--blue" onclick="window.print()" style="margin-top: auto;">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Download &amp; Print CV</span>
+            </button>
+          </article>
         </div>
 
-        <div class="cv-columns">
-          <!-- Column 1: Academic Appointments & Education -->
-          <div class="cv-column">
-            <h3 class="cv-block-title">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        <!-- Verified Researcher Identifiers Strip -->
+        <div class="cv-identifiers-strip" style="background: rgba(20,27,84,0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 1rem 1.4rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.85rem;">
+          <div style="display: flex; align-items: center; gap: 0.6rem; color: #a5b4fc; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+            <span>Verified Researcher Identifiers</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+              <span>Google Scholar</span>
+            </a>
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+              <span>Scopus (56104468000)</span>
+            </a>
+            <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+              <span>MathSciNet (1022379)</span>
+            </a>
+            <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+              <span>ORCID (0000-0003-0911-6838)</span>
+            </a>
+            <a href="https://www.linkedin.com/in/sunday-fadugba-ph-d-fasi-afaan-mages-cmacsp-mnsps-858b9663?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+              <span>LinkedIn Profile</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Main Bento Grid (2-col: 1.15fr left, 1fr right) -->
+        <div class="bento-grid-main">
+
+          <!-- Left Bento Card (Deep Navy): Academic Appointments & Education -->
+          <div class="b-card b-card--navy">
+            
+            <!-- Appointments -->
+            <div class="cv-section-header">
+              <svg width="22" height="22" fill="none" stroke="#f59e0b" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
               <span>Academic Appointments</span>
-            </h3>
+            </div>
 
             <div class="cv-timeline">
               <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">2018 &mdash; Present</div>
+                <span class="cv-date-badge">2018 &mdash; Present</span>
                 <h4 class="cv-item-role">Senior Lecturer / Associate Professor</h4>
-                <p class="cv-item-institution">Department of Mathematical Sciences</p>
-                <p class="cv-item-details">Delivering undergraduate and postgraduate lectures in Advanced Numerical Analysis, Stochastic Processes, PDE Theory, and Computational Financial Modeling. Mentoring Ph.D. candidates.</p>
+                <p class="cv-item-inst">Department of Mathematical Sciences, Ekiti State University</p>
+                <p class="cv-item-desc">
+                  Delivering undergraduate and postgraduate lectures in Advanced Numerical Analysis, Stochastic Processes, PDE Theory, and Computational Financial Modeling. Supervised over 10 M.Sc. and Ph.D. candidates to completion.
+                </p>
               </div>
 
               <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">2013 &mdash; 2018</div>
+                <span class="cv-date-badge">2013 &mdash; 2018</span>
                 <h4 class="cv-item-role">Lecturer I</h4>
-                <p class="cv-item-institution">Department of Mathematical Sciences</p>
-                <p class="cv-item-details">Instructed core courses in Mathematical Methods, Ordinary Differential Equations, and Real Analysis. Supervised over 15 undergraduate dissertations.</p>
+                <p class="cv-item-inst">Department of Mathematical Sciences, Ekiti State University</p>
+                <p class="cv-item-desc">
+                  Instructed core courses in Mathematical Methods, Ordinary Differential Equations, and Real Analysis. Supervised over 15 undergraduate dissertations.
+                </p>
               </div>
 
               <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">2008 &mdash; 2013</div>
+                <span class="cv-date-badge">2008 &mdash; 2013</span>
                 <h4 class="cv-item-role">Lecturer II / Assistant Lecturer</h4>
-                <p class="cv-item-institution">Faculty of Science</p>
-                <p class="cv-item-details">Conducted tutorial recitation sections, lab exercises in MATLAB/Maple, and assisted in departmental examination coordination.</p>
+                <p class="cv-item-inst">Faculty of Science, Ekiti State University</p>
+                <p class="cv-item-desc">
+                  Conducted tutorial recitation sections, lab exercises in MATLAB/Maple, and assisted in departmental examination coordination.
+                </p>
               </div>
             </div>
 
             <!-- Education -->
-            <h3 class="cv-block-title cv-block-title-spaced">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"/></svg>
+            <div class="cv-section-header" style="margin-top: 1rem;">
+              <svg width="22" height="22" fill="none" stroke="#f59e0b" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"/></svg>
               <span>Education &amp; Qualifications</span>
-            </h3>
+            </div>
 
-            <div class="cv-timeline">
+            <div class="cv-timeline" style="margin-bottom: 0;">
               <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">Conferred</div>
+                <span class="cv-date-badge">Conferred</span>
                 <h4 class="cv-item-role">Ph.D. in Applied Mathematics</h4>
-                <p class="cv-item-institution">Specialization: Numerical Analysis &amp; Stochastic Differential Equations</p>
-                <p class="cv-item-details">Doctoral Dissertation: <em>"On the Numerical and Analytical Solutions of Stochastic Differential Equations in Financial Derivatives Valuation"</em>.</p>
+                <p class="cv-item-inst">Specialization: Numerical Analysis &amp; Stochastic Differential Equations</p>
+                <p class="cv-item-desc">
+                  Doctoral Dissertation: <em>"On the Numerical and Analytical Solutions of Stochastic Differential Equations in Financial Derivatives Valuation"</em>.
+                </p>
               </div>
 
               <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">Conferred</div>
+                <span class="cv-date-badge">Conferred</span>
                 <h4 class="cv-item-role">M.Sc. in Mathematics</h4>
-                <p class="cv-item-institution">Distinction / Top Ranking Graduate</p>
-                <p class="cv-item-details">Thesis focused on high-order transform methods and boundary value solutions.</p>
+                <p class="cv-item-inst">Distinction / Top Ranking Graduate</p>
+                <p class="cv-item-desc">
+                  Thesis focused on high-order integral transform methods and boundary value solutions.
+                </p>
               </div>
 
               <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">Conferred</div>
+                <span class="cv-date-badge">Conferred</span>
                 <h4 class="cv-item-role">B.Sc. (Hons) in Mathematics</h4>
-                <p class="cv-item-institution">First Class Honours</p>
-                <p class="cv-item-details">Departmental Valedictorian and recipient of the University Dean's List Award.</p>
+                <p class="cv-item-inst">First Class Honours</p>
+                <p class="cv-item-desc">
+                  Departmental Valedictorian and recipient of the University Dean's List Award for academic excellence.
+                </p>
               </div>
             </div>
+
           </div>
 
-          <!-- Column 2: Administrative Leadership & Scholarly Service -->
-          <div class="cv-column">
-            <!-- Administrative Appointments -->
-            <h3 class="cv-block-title">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-              <span>Administrative Leadership</span>
-            </h3>
+          <!-- Right Column: Stacked Bento Cards -->
+          <div class="bento-stack">
 
-            <div class="cv-timeline">
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">Current Appointment</div>
-                <h4 class="cv-item-role">Deputy Director</h4>
-                <p class="cv-item-institution">Office of Research, Development and Innovation, Ekiti State University, Ado Ekiti</p>
-                <p class="cv-item-details">Spearheading university research ecosystems, competitive grant frameworks, and multi-disciplinary innovation transfer.</p>
+            <!-- Card 1: White Bento Card (Administrative Leadership) -->
+            <article class="b-card b-card--white">
+              <span class="b-stat-label">Institutional Leadership</span>
+              <div class="cv-section-header">
+                <svg width="22" height="22" fill="none" stroke="#3b48d4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                <span>Administrative Leadership</span>
               </div>
 
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">Current Appointment</div>
-                <h4 class="cv-item-role">Data Protection Officer (DPO)</h4>
-                <p class="cv-item-institution">Ekiti State University, Ado Ekiti</p>
-                <p class="cv-item-details">Directing university data governance, privacy compliance frameworks, and digital information protection across all faculties.</p>
+              <div class="cv-timeline" style="margin-bottom: 0;">
+                <div class="cv-item">
+                  <span class="cv-date-badge">Current Appointment</span>
+                  <h4 class="cv-item-role">Deputy Director</h4>
+                  <p class="cv-item-inst">Office of Research, Dev &amp; Innovation (ORDI), EKSU</p>
+                  <p class="cv-item-desc">
+                    Spearheading university research ecosystems, competitive grant frameworks, and multi-disciplinary innovation transfer.
+                  </p>
+                </div>
+
+                <div class="cv-item">
+                  <span class="cv-date-badge">Current Appointment</span>
+                  <h4 class="cv-item-role">Data Protection Officer (DPO)</h4>
+                  <p class="cv-item-inst">Ekiti State University, Ado Ekiti</p>
+                  <p class="cv-item-desc">
+                    Directing university data governance, privacy compliance frameworks, and digital information protection across all faculties.
+                  </p>
+                </div>
+
+                <div class="cv-item">
+                  <span class="cv-date-badge">27 Jan &mdash; 31 Jul, 2026</span>
+                  <h4 class="cv-item-role">Coordinator</h4>
+                  <p class="cv-item-inst">Directorate of General Studies, EKSU</p>
+                  <p class="cv-item-desc">
+                    Coordinated curriculum scheduling, assessment administration, and examination logistics for university general studies courses.
+                  </p>
+                </div>
+
+                <div class="cv-item">
+                  <span class="cv-date-badge">2025 &mdash; 2026</span>
+                  <h4 class="cv-item-role">Deputy Director</h4>
+                  <p class="cv-item-inst">Directorate of General Studies, EKSU</p>
+                  <p class="cv-item-desc">
+                    Co-administered university-wide instructional delivery, quality assurance, and foundational student pedagogy.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Blue Bento Card (Editorial & Scholarly Service) -->
+            <article class="b-card b-card--blue">
+              <span class="b-stat-label">Scholarly Service</span>
+              <div class="cv-section-header">
+                <svg width="22" height="22" fill="none" stroke="#ffffff" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                <span>Editorial &amp; Review Roles</span>
               </div>
 
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">27th January &mdash; 31st July, 2026</div>
-                <h4 class="cv-item-role">Coordinator</h4>
-                <p class="cv-item-institution">Directorate of General Studies, Ekiti State University, Ado Ekiti</p>
-                <p class="cv-item-details">Coordinated curriculum scheduling, assessment administration, and examination logistics for general studies undergraduate courses.</p>
+              <div class="cv-timeline" style="margin-bottom: 0;">
+                <div class="cv-item">
+                  <span class="cv-date-badge">2020 &mdash; Present</span>
+                  <h4 class="cv-item-role">Associate Editor</h4>
+                  <p class="cv-item-inst">International Journal of Applied Mathematical Research</p>
+                  <p class="cv-item-desc">
+                    Managing peer review pipelines, appointing international referees, and ensuring rigorous academic evaluation standards.
+                  </p>
+                </div>
+
+                <div class="cv-item">
+                  <span class="cv-date-badge">2016 &mdash; Present</span>
+                  <h4 class="cv-item-role">Active Peer Reviewer</h4>
+                  <p class="cv-item-inst">Elsevier, Springer Nature, IEEE, and Taylor &amp; Francis</p>
+                  <p class="cv-item-desc">
+                    Regular evaluations for <em>J. Computational &amp; Applied Math</em>, <em>Appl. Numerical Math</em>, and <em>Math Methods in the Applied Sciences</em>.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Light Blue Bento Card (Professional Affiliations) -->
+            <article class="b-card b-card--light-blue">
+              <span class="b-stat-label">Memberships</span>
+              <div class="cv-section-header">
+                <svg width="22" height="22" fill="none" stroke="#3b48d4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Professional Affiliations</span>
               </div>
 
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">2025 &mdash; 2026</div>
-                <h4 class="cv-item-role">Deputy Director</h4>
-                <p class="cv-item-institution">Directorate of General Studies, Ekiti State University, Ado Ekiti</p>
-                <p class="cv-item-details">Co-administered university-wide general studies instructional delivery, quality assurance, and foundational student pedagogy.</p>
+              <div class="cv-timeline" style="margin-bottom: 0;">
+                <div class="cv-item">
+                  <span class="cv-date-badge">Active Member</span>
+                  <h4 class="cv-item-role">Nigerian Mathematical Society (NMS)</h4>
+                  <p class="cv-item-desc">Full Member in Good Standing participating in national colloquia.</p>
+                </div>
+
+                <div class="cv-item">
+                  <span class="cv-date-badge">Active Member</span>
+                  <h4 class="cv-item-role">Society for Industrial &amp; Applied Mathematics (SIAM)</h4>
+                  <p class="cv-item-desc">Activity Group on Financial Mathematics and Engineering.</p>
+                </div>
+
+                <div class="cv-item">
+                  <span class="cv-date-badge">Active Member</span>
+                  <h4 class="cv-item-role">African Mathematical Union (AMU)</h4>
+                  <p class="cv-item-desc">Commission on Mathematical Modeling and Capacity Building.</p>
+                </div>
               </div>
-            </div>
+            </article>
 
-            <!-- Editorial Roles & Scholarly Service -->
-            <h3 class="cv-block-title cv-block-title-spaced">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
-              <span>Editorial &amp; Scholarly Service</span>
-            </h3>
-
-            <div class="cv-timeline">
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">2020 &mdash; Present</div>
-                <h4 class="cv-item-role">Associate Editor</h4>
-                <p class="cv-item-institution">International Journal of Applied Mathematical Research</p>
-                <p class="cv-item-details">Managing peer review pipelines, appointing referees, and ensuring rigorous academic evaluation standards.</p>
-              </div>
-
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">2016 &mdash; Present</div>
-                <h4 class="cv-item-role">Active Peer Reviewer</h4>
-                <p class="cv-item-institution">Elsevier, Springer Nature, IEEE, and Taylor &amp; Francis</p>
-                <p class="cv-item-details">Regular peer evaluations for <em>Journal of Computational &amp; Applied Mathematics</em>, <em>Applied Numerical Mathematics</em>, and <em>Mathematical Methods in the Applied Sciences</em>.</p>
-              </div>
-
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">2019 &mdash; Present</div>
-                <h4 class="cv-item-role">Departmental Postgraduate Coordinator</h4>
-                <p class="cv-item-institution">School of Postgraduate Studies</p>
-                <p class="cv-item-details">Coordinating admissions, seminar presentations, defense panels, and external examiner reviews for M.Sc. and Ph.D. students.</p>
-              </div>
-            </div>
-
-            <!-- Professional Memberships -->
-            <h3 class="cv-block-title cv-block-title-spaced">
-              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              <span>Professional Affiliations</span>
-            </h3>
-
-            <div class="cv-timeline">
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">Active Member</div>
-                <h4 class="cv-item-role">Nigerian Mathematical Society (NMS)</h4>
-                <p class="cv-item-institution">Full Member in Good Standing</p>
-              </div>
-
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">Active Member</div>
-                <h4 class="cv-item-role">Society for Industrial and Applied Mathematics (SIAM)</h4>
-                <p class="cv-item-institution">Activity Group on Financial Mathematics &amp; Engineering</p>
-              </div>
-
-              <div class="cv-item">
-                <div class="cv-item-dot"></div>
-                <div class="cv-item-date">Active Member</div>
-                <h4 class="cv-item-role">African Mathematical Union (AMU)</h4>
-                <p class="cv-item-institution">Commission on Mathematical Modeling &amp; Research</p>
-              </div>
-            </div>
           </div>
         </div>
+
+        <!-- Bottom Bento Grid (2-col) -->
+        <div class="bento-grid-2">
+          <!-- Card 1: Blue -->
+          <article class="b-card b-card--blue">
+            <span class="b-stat-label">Scholarly Inquiries</span>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; margin: 0.35rem 0 0.75rem; color: #fff;">
+              Postgraduate Advising &amp; Keynotes
+            </h3>
+            <p class="b-stat-desc" style="color: rgba(255,255,255,0.85);">
+              Available for doctoral committee advising, keynote lectures at international mathematical colloquia, and external thesis examinations.
+            </p>
+            <a href="contact.html" class="b-btn b-btn--white">Contact Dr. Fadugba &rarr;</a>
+          </article>
+
+          <!-- Card 2: White -->
+          <article class="b-card b-card--white">
+            <span class="b-stat-label">Research Output</span>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; margin: 0.35rem 0 0.75rem; color: #0f1240;">
+              Selected Scientific Publications
+            </h3>
+            <p class="b-stat-desc">
+              Explore 70+ published journal papers, conference proceedings, monographs, and citations in mathematical finance and numerical algorithms.
+            </p>
+            <a href="publications.html" class="b-btn b-btn--blue">Browse Publications &rarr;</a>
+          </article>
+        </div>
+
       </div>
     </section>
   </main>
 
+  <!-- ── SITE FOOTER ── -->
   <footer id="site-footer">
     <div class="container footer-content">
       <div class="footer-brand">Dr. S. E. Fadugba<span class="brand-highlight">.</span></div>
@@ -308,6 +798,23 @@
         <li><a href="cv.html">CV</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="footer-socials">
+        <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Google Scholar" aria-label="Google Scholar">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+        </a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Scopus ID" aria-label="Scopus ID">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        </a>
+        <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="MathSciNet ID" aria-label="MathSciNet ID">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v2.5L12 12l8 5.5V20H4v-2.5l7-5.5L4 6.5V4z"/></svg>
+        </a>
+        <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="ORCID" aria-label="ORCID">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-3.082 18.232H6.96V8.125h1.958v10.107zm-.979-11.493a1.137 1.137 0 110-2.274 1.137 1.137 0 010 2.274zm8.397 7.086c0 2.457-1.42 4.407-4.108 4.407h-3.413V8.125h3.413c2.688 0 4.108 1.95 4.108 4.407v1.293z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sunday-fadugba-ph-d-fasi-afaan-mages-cmacsp-mnsps-858b9663?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn" aria-label="LinkedIn">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+      </div>
       <p class="footer-copy">&copy; 2026 Dr. Sunday Emmanuel Fadugba. All rights reserved.</p>
     </div>
   </footer>

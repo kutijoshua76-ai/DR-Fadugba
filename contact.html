@@ -3,19 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Dr. Sunday Emmanuel Fadugba — academic inquiries, research collaboration, keynote speaking, and postgraduate supervision.">
-  <meta name="author" content="Dr. S. E. Fadugba">
-  <title>Contact | Dr. Fadugba — Lecturer, Researcher & Author</title>
+  <meta name="description" content="Academic contact and inquiry portal for Dr. Sunday Emmanuel Fadugba, PhD — research collaboration, postgraduate advising, keynote speaking, and editorial requests.">
+  <meta name="keywords" content="Dr Fadugba contact, Sunday Emmanuel Fadugba, Ekiti State University, applied mathematics contact, research collaboration, postgraduate supervision">
+  <meta name="author" content="Dr. Sunday Emmanuel Fadugba, PhD">
+  <title>Contact | Dr. Sunday Emmanuel FADUGBA, PhD — Academic Inquiries</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
+    /* ===================================================================
+       BENTO UI — CONTACT PAGE
+       Deep navy background (#0f1240) + white/blue/light-blue rounded cards
+    =================================================================== */
+
+    body {
+      background-color: #0f1240;
+    }
+
+    /* ---- Page Hero ---- */
     .page-hero {
-      background: radial-gradient(circle at 65% 45%, #142858 0%, #0a1738 50%, #050d22 100%);
-      padding: calc(var(--header-height) + 4rem) 0 4rem;
+      background:
+        linear-gradient(rgba(10, 14, 60, 0.80), rgba(10, 14, 60, 0.85)),
+        url('assets/images/page-header-bg.png') center center / cover no-repeat;
+      padding: calc(var(--header-height, 80px) + 4.5rem) 0 4.5rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -24,18 +40,20 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
       background-size: 28px 28px;
       pointer-events: none;
     }
     .page-hero-tag {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: #f59e0b;
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
     .page-hero-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -43,8 +61,8 @@
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
+      line-height: 1.12;
+      margin-bottom: 0.85rem;
     }
     .page-hero-bar {
       width: 60px;
@@ -53,13 +71,367 @@
       border-radius: 3px;
       margin: 0 auto;
     }
-    .page-content {
-      padding: 6rem 0;
+
+    /* ---- Bento Section ---- */
+    .bento-section {
+      background: #0f1240;
+      padding: 4.5rem 0 5.5rem;
+    }
+    .bento-section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7c8aff;
+      margin-bottom: 0.6rem;
+    }
+    .bento-section-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+    .bento-section-sub {
+      color: #a5b4fc;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ---- Bento Grid Layouts ---- */
+    .bento-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .bento-grid-contact {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 1.25rem;
+    }
+
+    /* ---- Card Base ---- */
+    .b-card {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    .b-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    /* Card Variants */
+    .b-card--blue {
+      background: linear-gradient(135deg, #3b48d4 0%, #6470f3 60%, #8b94ff 100%);
+      color: #ffffff;
+      padding: 2.25rem;
+    }
+    .b-card--white {
+      background: #ffffff;
+      color: #0f1240;
+      padding: 2.5rem;
+    }
+    .b-card--light-blue {
+      background: linear-gradient(135deg, #eef0ff 0%, #dfe4ff 100%);
+      color: #0f1240;
+      padding: 2.25rem;
+    }
+    .b-card--navy {
+      background: #141b54;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ffffff;
+      padding: 2.5rem;
+    }
+
+    .b-stat-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .b-card--blue .b-stat-label { color: #e0e7ff; }
+    .b-card--white .b-stat-label { color: #64748b; }
+    .b-card--light-blue .b-stat-label { color: #6366f1; }
+    .b-card--navy .b-stat-label { color: #7c8aff; }
+
+    .b-card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0.2rem 0 0.65rem;
+    }
+    .b-card--blue .b-card-title,
+    .b-card--navy .b-card-title { color: #ffffff; }
+    .b-card--white .b-card-title,
+    .b-card--light-blue .b-card-title { color: #0f1240; }
+
+    .b-card-desc {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+    .b-card--blue .b-card-desc { color: rgba(255,255,255,0.85); }
+    .b-card--navy .b-card-desc { color: rgba(255,255,255,0.78); }
+    .b-card--white .b-card-desc { color: #4a5568; }
+    .b-card--light-blue .b-card-desc { color: #3b4882; }
+
+    .b-icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .b-card--blue .b-icon-badge {
+      background: rgba(255,255,255,0.2);
+      color: #ffffff;
+    }
+    .b-card--white .b-icon-badge {
+      background: #eff6ff;
+      color: #3b48d4;
+    }
+    .b-card--light-blue .b-icon-badge {
+      background: rgba(59,72,212,0.15);
+      color: #3b48d4;
+    }
+
+    /* Tags / Pills */
+    .b-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+    }
+    .b-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .b-card--blue .b-tag,
+    .b-card--navy .b-tag {
+      background: rgba(255,255,255,0.12);
+      color: #e0e7ff;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+    .b-card--white .b-tag,
+    .b-card--light-blue .b-tag {
+      background: rgba(59,72,212,0.10);
+      color: #3b48d4;
+      border: 1px solid rgba(59,72,212,0.22);
+    }
+
+    /* ---- Contact Info Channel List ---- */
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .channel-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .channel-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #818cf8;
+      flex-shrink: 0;
+    }
+    .channel-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.25rem;
+    }
+    .channel-info p,
+    .channel-info a {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      margin: 0;
+      text-decoration: none;
+      line-height: 1.5;
+    }
+    .channel-info a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Scholarly Links Bento Grid */
+    .scholarly-profiles-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #a5b4fc;
+      margin-bottom: 0.85rem;
+    }
+    .scholarly-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .scholarly-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 0.7rem 0.9rem;
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .scholarly-btn:hover {
+      background: #3b48d4;
+      border-color: #6470f3;
+      transform: translateY(-2px);
+    }
+
+    /* Notice Card inside Navy */
+    .contact-notice {
+      margin-top: 2rem;
+      background: rgba(0,0,0,0.25);
+      border-left: 3px solid #f59e0b;
+      padding: 1rem 1.25rem;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+    .contact-notice strong {
+      color: #f59e0b;
+    }
+
+    /* ---- Form Layout ---- */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #0f1240;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.8rem 1.1rem;
+      font-size: 0.92rem;
+      color: #0f1240;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: #3b48d4;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(59,72,212,0.15);
+    }
+    .form-textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .btn-submit-inquiry {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #3b48d4;
+      color: #ffffff;
+      border: none;
+      padding: 0.95rem 2rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.22s ease;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(59,72,212,0.3);
+    }
+    .btn-submit-inquiry:hover {
+      background: #2f3ab2;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(59,72,212,0.45);
+    }
+    .btn-submit-inquiry:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #form-status {
+      margin-top: 1rem;
+    }
+    #form-status .alert {
+      padding: 0.85rem 1.25rem;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    #form-status .alert.success {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .bento-grid-3,
+      .bento-grid-contact {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- ── SITE HEADER ── -->
   <header id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-crest" aria-label="Dr. Sunday Emmanuel Fadugba Home">
@@ -100,6 +472,7 @@
   </header>
 
   <main>
+    <!-- ── PAGE HERO ── -->
     <div class="page-hero">
       <div class="container">
         <span class="page-hero-tag">Get in Touch</span>
@@ -108,114 +481,167 @@
       </div>
     </div>
 
-    <section class="page-content">
+    <!-- ── BENTO SECTION ── -->
+    <section class="bento-section">
       <div class="container">
-        <p class="section-subtitle page-subtitle-intro">
-          Open for research collaborations, graduate supervision inquiries, keynote speaking, and academic consultations.
+        <p class="bento-section-label">Direct Lines &amp; Appointments</p>
+        <h2 class="bento-section-heading">Connect With Dr. Fadugba</h2>
+        <p class="bento-section-sub">
+          Open for joint research collaborations, graduate student supervision, keynote conference lectures, and scholarly editorial assignments.
         </p>
 
-        <div class="contact-grid">
-          <!-- Contact Information Card -->
-          <div class="contact-info-card">
-            <h3>Contact Information</h3>
-            <p class="intro">
-              Feel free to reach out directly via institutional email or visit during scheduled departmental office hours.
+        <!-- Top Stat Row (3-col Bento Grid) -->
+        <div class="bento-grid-3">
+          <!-- Card 1: Blue -->
+          <article class="b-card b-card--blue">
+            <div class="b-icon-badge">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <span class="b-stat-label">Direct Correspondence</span>
+            <h3 class="b-card-title">Official Email</h3>
+            <p class="b-card-desc">
+              <a href="mailto:sunday.fadugba@eksu.edu.ng" style="color: #ffffff; text-decoration: underline; font-weight: 700;">sunday.fadugba@eksu.edu.ng</a><br>
+              Primary communication line for scholarly proposals and administrative matters.
+            </p>
+            <div class="b-tags">
+              <span class="b-tag">Rapid Response</span>
+              <span class="b-tag">Institutional Channel</span>
+            </div>
+          </article>
+
+          <!-- Card 2: White -->
+          <article class="b-card b-card--white">
+            <div class="b-icon-badge">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="b-stat-label">Advising &amp; Consultation</span>
+            <h3 class="b-card-title">Office Hours</h3>
+            <p class="b-card-desc">
+              <strong style="color: #0f1240;">Tue &amp; Thu: 10:00 AM &ndash; 1:00 PM</strong><br>
+              Office 214, Faculty of Science, EKSU. By appointment for doctoral committee advising.
+            </p>
+            <div class="b-tags">
+              <span class="b-tag">Faculty Office</span>
+              <span class="b-tag">Postgraduate Mentoring</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Light Blue -->
+          <article class="b-card b-card--light-blue">
+            <div class="b-icon-badge">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <span class="b-stat-label">Institution &amp; Faculty</span>
+            <h3 class="b-card-title">Campus Location</h3>
+            <p class="b-card-desc">
+              Department of Mathematical Sciences, Ekiti State University, P.M.B. 5363, Ado Ekiti, Ekiti State, Nigeria.
+            </p>
+            <div class="b-tags">
+              <span class="b-tag">Faculty of Science</span>
+              <span class="b-tag">EKSU Main Campus</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Main Contact Bento Grid (2-col: 1fr left, 1.35fr right) -->
+        <div class="bento-grid-contact">
+
+          <!-- Left Bento Card (Deep Navy): Details & Scholarly Networks -->
+          <article class="b-card b-card--navy">
+            <span class="b-stat-label">Academic Channels</span>
+            <h3 class="b-card-title" style="font-size: 1.5rem;">Scholarly Profiles &amp; Networks</h3>
+            <p class="b-card-desc">
+              Explore publications, citation metrics, and peer-review footprints across global research indices.
             </p>
 
-            <div class="contact-detail-list">
-              <div class="contact-detail-item">
-                <div class="contact-icon">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                </div>
-                <div>
-                  <h4>Department &amp; Office</h4>
-                  <p>Department of Mathematical Sciences<br>Faculty of Science, Office 214</p>
-                </div>
-              </div>
-
-              <div class="contact-detail-item">
-                <div class="contact-icon">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </div>
-                <div>
-                  <h4>Official University Email</h4>
-                  <p><a href="mailto:s.e.fadugba@university.edu.ng">s.e.fadugba@university.edu.ng</a></p>
-                </div>
-              </div>
-
-              <div class="contact-detail-item">
-                <div class="contact-icon">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                </div>
-                <div>
-                  <h4>Office Hours</h4>
-                  <p>Tuesday &amp; Thursday: 10:00 AM &ndash; 1:00 PM<br>(By appointment for postgraduate advising)</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Scholarly Network Buttons -->
-            <h4>Scholarly Profiles</h4>
-            <div class="contact-social-grid">
-              <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+            <div class="scholarly-profiles-title">Verified Profiles &amp; Indices</div>
+            <div class="scholarly-grid">
+              <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="scholarly-btn">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
                 <span>Google Scholar</span>
               </a>
-              <a href="https://orcid.org" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+              <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="scholarly-btn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                <span>Scopus ID</span>
+              </a>
+              <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="scholarly-btn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v2.5L12 12l8 5.5V20H4v-2.5l7-5.5L4 6.5V4z"/></svg>
+                <span>MathSciNet ID</span>
+              </a>
+              <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="scholarly-btn">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-3.082 18.232H6.96V8.125h1.958v10.107zm-.979-11.493a1.137 1.137 0 110-2.274 1.137 1.137 0 010 2.274zm8.397 7.086c0 2.457-1.42 4.407-4.108 4.407h-3.413V8.125h3.413c2.688 0 4.108 1.95 4.108 4.407v1.293z"/></svg>
                 <span>ORCID</span>
               </a>
-              <a href="https://researchgate.net" target="_blank" rel="noopener noreferrer" class="contact-social-link">
-                <span>ResearchGate</span>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">
-                <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/sunday-fadugba-ph-d-fasi-afaan-mages-cmacsp-mnsps-858b9663?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="scholarly-btn" style="grid-column: span 2;">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn Profile</span>
               </a>
             </div>
-          </div>
 
-          <!-- Contact Form -->
-          <div class="contact-form-container">
-            <form id="academic-contact-form">
+            <div class="contact-notice">
+              <strong>Postgraduate Inquiries:</strong> Prospective Ph.D. and M.Sc. students should include a curriculum vitae, academic transcript summary, and a concise 1-page statement of research intent in applied mathematics.
+            </div>
+          </article>
+
+          <!-- Right Bento Card (White): Academic Contact Form -->
+          <article class="b-card b-card--white">
+            <span class="b-stat-label">Formal Submission</span>
+            <h3 class="b-card-title" style="font-size: 1.5rem;">Send an Academic Inquiry</h3>
+            <p class="b-card-desc">
+              Please complete the inquiry details below. Messages and notifications are dispatched directly to Dr. Fadugba's official institutional address (<code>sunday.fadugba@eksu.edu.ng</code>).
+            </p>
+
+            <form id="academic-contact-form" action="https://formsubmit.co/sunday.fadugba@eksu.edu.ng" method="POST">
+              <!-- FormSubmit configuration targeting official address: sunday.fadugba@eksu.edu.ng -->
+              <input type="hidden" name="_subject" id="form-email-subject" value="New Academic Inquiry via Portfolio - Dr. Fadugba">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <!-- Honeypot anti-spam field -->
+              <input type="text" name="_honey" style="display:none">
+
               <div class="form-row">
                 <div class="form-group">
-                  <label for="contact-name" class="form-label">Your Name *</label>
-                  <input type="text" id="contact-name" class="form-input" placeholder="Prof. / Dr. / Mr. / Ms." required>
+                  <label for="contact-name" class="form-label">Full Name &amp; Title *</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Prof. / Dr. / Scholar" required>
                 </div>
                 <div class="form-group">
-                  <label for="contact-email" class="form-label">Email Address *</label>
-                  <input type="email" id="contact-email" class="form-input" placeholder="name@institution.edu" required>
+                  <label for="contact-email" class="form-label">Academic / Institutional Email *</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="colleague@institution.edu" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="contact-subject" class="form-label">Nature of Inquiry *</label>
-                <select id="contact-subject" class="form-select" required>
-                  <option value="" disabled selected>Select an inquiry type...</option>
-                  <option value="research">Research Collaboration &amp; Grant Partnerships</option>
-                  <option value="supervision">Postgraduate Advising / Ph.D. Supervision</option>
-                  <option value="keynote">Keynote Speaker / Conference Lecture</option>
-                  <option value="peer-review">Editorial / Manuscript Review Request</option>
-                  <option value="general">General Academic Inquiry</option>
+                <select id="contact-subject" name="inquiry_domain" class="form-select" required>
+                  <option value="" disabled selected>Select an inquiry domain...</option>
+                  <option value="Research Collaboration & Grant Partnerships">Research Collaboration &amp; Grant Partnerships</option>
+                  <option value="Postgraduate Advising / Ph.D. Supervision">Postgraduate Advising / Ph.D. Supervision</option>
+                  <option value="Keynote Speaker / Conference Lecture">Keynote Speaker / Conference Lecture</option>
+                  <option value="Editorial / Manuscript Review Request">Editorial / Manuscript Review Request</option>
+                  <option value="General Academic Inquiry">General Academic Inquiry</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="contact-message" class="form-label">Your Message *</label>
-                <textarea id="contact-message" class="form-textarea" placeholder="Please provide details regarding your inquiry, proposed dates, or research objectives..." required></textarea>
+                <label for="contact-message" class="form-label">Detailed Message *</label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Detail your proposed collaboration, conference topic, or academic inquiry here..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-full-width">
+              <button type="submit" class="btn-submit-inquiry">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                 <span>Send Academic Inquiry</span>
               </button>
 
               <div id="form-status" role="status" aria-live="polite"></div>
             </form>
-          </div>
+          </article>
+
         </div>
       </div>
     </section>
   </main>
 
+  <!-- ── SITE FOOTER ── -->
   <footer id="site-footer">
     <div class="container footer-content">
       <div class="footer-brand">Dr. S. E. Fadugba<span class="brand-highlight">.</span></div>
@@ -228,6 +654,23 @@
         <li><a href="cv.html">CV</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="footer-socials">
+        <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Google Scholar" aria-label="Google Scholar">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+        </a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Scopus ID" aria-label="Scopus ID">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        </a>
+        <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="MathSciNet ID" aria-label="MathSciNet ID">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v2.5L12 12l8 5.5V20H4v-2.5l7-5.5L4 6.5V4z"/></svg>
+        </a>
+        <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="ORCID" aria-label="ORCID">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-3.082 18.232H6.96V8.125h1.958v10.107zm-.979-11.493a1.137 1.137 0 110-2.274 1.137 1.137 0 010 2.274zm8.397 7.086c0 2.457-1.42 4.407-4.108 4.407h-3.413V8.125h3.413c2.688 0 4.108 1.95 4.108 4.407v1.293z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sunday-fadugba-ph-d-fasi-afaan-mages-cmacsp-mnsps-858b9663?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn" aria-label="LinkedIn">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+      </div>
       <p class="footer-copy">&copy; 2026 Dr. Sunday Emmanuel Fadugba. All rights reserved.</p>
     </div>
   </footer>

@@ -3,19 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Selected publications by Dr. Sunday Emmanuel Fadugba — peer-reviewed journal articles, conference papers, and book chapters.">
-  <meta name="author" content="Dr. S. E. Fadugba">
-  <title>Publications | Dr. Fadugba — Lecturer, Researcher & Author</title>
+  <meta name="description" content="Selected publications by Dr. Sunday Emmanuel Fadugba, PhD — peer-reviewed journal articles, conference papers, and book chapters.">
+  <meta name="keywords" content="Dr Fadugba publications, Sunday Emmanuel Fadugba, mathematical sciences papers, financial mathematics, numerical schemes, Mellin transform">
+  <meta name="author" content="Dr. Sunday Emmanuel Fadugba, PhD">
+  <title>Publications | Dr. Sunday Emmanuel FADUGBA, PhD — Selected Scholarly Works</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
+    /* ===================================================================
+       BENTO UI — PUBLICATIONS PAGE
+       Deep navy background (#0f1240) + white/blue/light-blue rounded cards
+    =================================================================== */
+
+    body {
+      background-color: #0f1240;
+    }
+
+    /* ---- Page Hero ---- */
     .page-hero {
-      background: radial-gradient(circle at 65% 45%, #142858 0%, #0a1738 50%, #050d22 100%);
-      padding: calc(var(--header-height) + 4rem) 0 4rem;
+      background:
+        linear-gradient(rgba(10, 14, 60, 0.80), rgba(10, 14, 60, 0.85)),
+        url('assets/images/page-header-bg.png') center center / cover no-repeat;
+      padding: calc(var(--header-height, 80px) + 4.5rem) 0 4.5rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -24,18 +40,20 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
       background-size: 28px 28px;
       pointer-events: none;
     }
     .page-hero-tag {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: #f59e0b;
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
     .page-hero-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -43,8 +61,8 @@
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
+      line-height: 1.12;
+      margin-bottom: 0.85rem;
     }
     .page-hero-bar {
       width: 60px;
@@ -53,13 +71,597 @@
       border-radius: 3px;
       margin: 0 auto;
     }
-    .page-content {
-      padding: 6rem 0;
+
+    /* ---- Bento Section ---- */
+    .bento-section {
+      background: #0f1240;
+      padding: 4.5rem 0 5.5rem;
+    }
+    .bento-section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7c8aff;
+      margin-bottom: 0.6rem;
+    }
+    .bento-section-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+    .bento-section-sub {
+      color: #a5b4fc;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ---- Bento Grid Layouts ---- */
+    .bento-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .bento-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    /* ---- Card Base ---- */
+    .b-card {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    .b-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    /* Color Variants */
+    .b-card--blue {
+      background: linear-gradient(135deg, #3b48d4 0%, #6470f3 60%, #8b94ff 100%);
+      color: #ffffff;
+      padding: 2.25rem;
+    }
+    .b-card--white {
+      background: #ffffff;
+      color: #0f1240;
+      padding: 2.25rem;
+    }
+    .b-card--light-blue {
+      background: linear-gradient(135deg, #eef0ff 0%, #dfe4ff 100%);
+      color: #0f1240;
+      padding: 2.25rem;
+    }
+    .b-card--navy {
+      background: #1a2068;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #ffffff;
+      padding: 2.25rem;
+    }
+
+    /* Stat Numbers */
+    .b-stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 3.25rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .b-card--blue .b-stat-number { color: #ffffff; }
+    .b-card--white .b-stat-number { color: #3b48d4; }
+    .b-card--light-blue .b-stat-number { color: #1e293b; }
+
+    .b-stat-label {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .b-card--blue .b-stat-label { color: #e0e7ff; }
+    .b-card--white .b-stat-label { color: #0f1240; }
+    .b-card--light-blue .b-stat-label { color: #1e1b4b; }
+
+    .b-stat-desc {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+    .b-card--blue .b-stat-desc { color: rgba(255,255,255,0.82); }
+    .b-card--white .b-stat-desc { color: #4a5568; }
+    .b-card--light-blue .b-stat-desc { color: #3b4882; }
+
+    /* Tags / Pills */
+    .b-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+    }
+    .b-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .b-card--blue .b-tag {
+      background: rgba(255,255,255,0.15);
+      color: #e0e7ff;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .b-card--white .b-tag,
+    .b-card--light-blue .b-tag {
+      background: rgba(59,72,212,0.10);
+      color: #3b48d4;
+      border: 1px solid rgba(59,72,212,0.22);
+    }
+
+    /* ---- Bento Filter & Search Toolbar Card ---- */
+    .b-toolbar-card {
+      background: #141b54;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .pub-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .pub-filter-btn {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #cbd5e1;
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+    .pub-filter-btn:hover {
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.3);
+    }
+    .pub-filter-btn.active {
+      background: #3b48d4;
+      border-color: #6470f3;
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(59,72,212,0.4);
+    }
+
+    .pub-search-box {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(15,18,64,0.8);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 0.45rem 1.1rem;
+      min-width: 320px;
+      flex-grow: 1;
+      max-width: 440px;
+    }
+    .pub-search-box svg {
+      color: #8b94ff;
+      flex-shrink: 0;
+    }
+    .pub-search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #ffffff;
+      font-size: 0.88rem;
+      width: 100%;
+      font-family: inherit;
+    }
+    .pub-search-input::placeholder {
+      color: #64748b;
+    }
+
+    /* ---- Rendered Publications List in Bento Style ---- */
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .pub-card {
+      background: #ffffff !important;
+      color: #0f1240 !important;
+      border-radius: 20px !important;
+      border: none !important;
+      padding: 2rem 2.25rem !important;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+      transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .pub-card:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25) !important;
+    }
+    .pub-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .pub-type-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+    .pub-type-badge.journal {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+    .pub-type-badge.conference {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .pub-type-badge.book {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .pub-year {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+    }
+    .pub-special-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+    }
+    .pub-citations {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #d97706;
+      background: #fffbeb;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+    }
+    .pub-citations svg {
+      color: #f59e0b;
+    }
+    .pub-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f1240;
+      line-height: 1.4;
+      margin: 0.35rem 0 0.5rem;
+    }
+    .pub-authors {
+      font-size: 0.9rem;
+      color: #3b48d4;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .pub-venue {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-bottom: 0.85rem;
+    }
+    .pub-venue em {
+      font-style: italic;
+      color: #475569;
+    }
+    .pub-abstract {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #4b5563;
+      margin-bottom: 1.25rem;
+    }
+    .pub-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      padding-top: 0.75rem;
+      border-top: 1px solid #f1f5f9;
+    }
+    .btn-pub-link,
+    .btn-pub-bibtex {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .btn-pub-link {
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+    }
+    .btn-pub-link:hover {
+      background: #2563eb;
+      color: #ffffff;
+    }
+    .btn-pub-bibtex {
+      background: #f8fafc;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+    }
+    .btn-pub-bibtex:hover {
+      background: #3b48d4;
+      color: #ffffff;
+      border-color: #3b48d4;
+    }
+    .pub-empty-state {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: #64748b;
+    }
+    .pub-empty-state svg {
+      margin: 0 auto 1rem;
+      color: #94a3b8;
+    }
+
+    /* ---- Action Buttons ---- */
+    .b-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      margin-top: 1.25rem;
+      align-self: flex-start;
+    }
+    .b-btn--white {
+      background: #ffffff;
+      color: #0f1240;
+    }
+    .b-btn--white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .b-btn--blue {
+      background: #3b48d4;
+      color: #ffffff;
+    }
+    .b-btn--blue:hover {
+      background: #2f3ab2;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(59,72,212,0.4);
+    }
+
+    /* ---- Google Scholar Referral Banner ---- */
+    .pub-scholar-referral-banner {
+      background: linear-gradient(135deg, #141b54 0%, #1e266d 100%);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 2.25rem 2.5rem;
+      margin: 2.5rem 0 3.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.75rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    .scholar-referral-content {
+      flex: 1 1 500px;
+    }
+    .scholar-referral-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #f59e0b;
+      margin-bottom: 0.75rem;
+    }
+    .scholar-referral-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .scholar-referral-content p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    /* ---- BibTeX Modal ---- */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 14, 60, 0.82);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-backdrop.active {
+      display: flex;
+    }
+    .modal-content {
+      background: #141b54;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 680px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      overflow: hidden;
+      color: #ffffff;
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .modal-header h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0;
+      color: #ffffff;
+    }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+    .modal-close-btn:hover {
+      color: #ffffff;
+    }
+    .modal-body {
+      padding: 1.5rem 1.75rem;
+    }
+    .bibtex-box {
+      background: #0a0e34;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #a5b4fc;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin: 0;
+      max-height: 320px;
+    }
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 1.75rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.15);
+    }
+    .modal-footer button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #3b48d4;
+      color: #ffffff;
+      border: none;
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s ease;
+    }
+    .modal-footer button:hover {
+      background: #4f5be8;
+    }
+
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10b981;
+      color: #ffffff;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(16,185,129,0.35);
+      z-index: 1100;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: all 0.25s ease;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .bento-grid-3,
+      .bento-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .b-toolbar-card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .pub-search-box {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- ── SITE HEADER ── -->
   <header id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-crest" aria-label="Dr. Sunday Emmanuel Fadugba Home">
@@ -100,6 +702,7 @@
   </header>
 
   <main>
+    <!-- ── PAGE HERO ── -->
     <div class="page-hero">
       <div class="container">
         <span class="page-hero-tag">Scholarly Output</span>
@@ -108,28 +711,152 @@
       </div>
     </div>
 
-    <section class="page-content">
+    <!-- ── BENTO SECTION ── -->
+    <section class="bento-section">
       <div class="container">
-        <p class="section-subtitle page-subtitle-intro">
-          A curated selection of peer-reviewed journal articles, conference papers, and book chapters.
+        <p class="bento-section-label">Research Impact &amp; Metrics</p>
+        <h2 class="bento-section-heading">Curated Works &amp; Scientific Contributions</h2>
+        <p class="bento-section-sub">
+          A selection of peer-reviewed journal papers, conference proceedings, monographs, and book chapters spanning numerical analysis, stochastic volatility, and computational epidemiology.
         </p>
 
-        <!-- Filter & Search Toolbar -->
-        <div class="publications-toolbar" id="publications-toolbar">
+        <!-- Metric Bento Cards (3-col) -->
+        <div class="bento-grid-3">
+          <!-- Card 1: Blue -->
+          <article class="b-card b-card--blue">
+            <div class="b-stat-number">70+</div>
+            <div class="b-stat-label">Peer-Reviewed Publications</div>
+            <p class="b-stat-desc">
+              High-impact scholarly papers indexed in Google Scholar, Scopus, Web of Science, and MathSciNet across international publishers including Elsevier, Springer Nature, and IEEE.
+            </p>
+            <div class="b-tags">
+              <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none; color:inherit;">Scopus ID &rarr;</a>
+              <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none; color:inherit;">MathSciNet &rarr;</a>
+              <span class="b-tag">53 i10-Index</span>
+            </div>
+          </article>
+
+          <!-- Card 2: White -->
+          <article class="b-card b-card--white">
+            <div class="b-stat-number">1,550+</div>
+            <div class="b-stat-label">Google Scholar Citations</div>
+            <p class="b-stat-desc">
+              Extensively cited across international mathematical literature, with 1,134+ citations gained since 2021 in numerical ODE/PDE schemes, option pricing, and mathematical epidemiology.
+            </p>
+            <div class="b-tags">
+              <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none; color:inherit;">Google Scholar &rarr;</a>
+              <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="b-tag" style="text-decoration:none; color:inherit;">ORCID &rarr;</a>
+              <span class="b-tag">1,134 Since 2021</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Light Blue -->
+          <article class="b-card b-card--light-blue">
+            <div class="b-stat-number">20</div>
+            <div class="b-stat-label">Google Scholar h-Index</div>
+            <p class="b-stat-desc">
+              Demonstrating sustained academic rigor with an h-index of 20 (17 since 2021) and an i10-index of 53, affirming significant individual paper impact.
+            </p>
+            <div class="b-tags">
+              <span class="b-tag">h-index: 20</span>
+              <span class="b-tag">i10-index: 53</span>
+              <span class="b-tag">h-index: 17 (Recent)</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Verified Author Indices Bar -->
+        <div class="pub-indices-bar" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; background:rgba(20,27,84,0.7); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:0.9rem 1.4rem; margin-bottom:1.25rem;">
+          <div style="display:flex; align-items:center; gap:0.6rem; color:#a5b4fc; font-size:0.82rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Verified Author Indexes:</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+            <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+              <span>Google Scholar</span>
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+              <span>Scopus ID (56104468000)</span>
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+              <span>MathSciNet (1022379)</span>
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+              <span>ORCID</span>
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/sunday-fadugba-ph-d-fasi-afaan-mages-cmacsp-mnsps-858b9663?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="pub-filter-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.85rem; font-size:0.8rem;">
+              <span>LinkedIn</span>
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter & Search Bento Toolbar -->
+        <div class="b-toolbar-card" id="publications-toolbar">
           <div class="pub-filters">
-            <button class="pub-filter-btn active" data-filter="all">All (7)</button>
+            <button class="pub-filter-btn active" data-filter="all">All Selected Works</button>
             <button class="pub-filter-btn" data-filter="journal">Journal Articles</button>
             <button class="pub-filter-btn" data-filter="conference">Conferences</button>
             <button class="pub-filter-btn" data-filter="book">Books &amp; Chapters</button>
           </div>
           <div class="pub-search-box">
             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="pub-search" class="pub-search-input" placeholder="Search by title, author, year...">
+            <input type="text" id="pub-search" class="pub-search-input" placeholder="Search by title, author, year, keyword...">
           </div>
         </div>
 
         <!-- Publications Container rendered by js/publications.js -->
         <div class="publications-list" id="publications-list"></div>
+
+        <!-- Google Scholar Full Archive Referral Banner -->
+        <div class="pub-scholar-referral-banner">
+          <div class="scholar-referral-content">
+            <div class="scholar-referral-badge">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+              <span>Verified Citation Archive</span>
+            </div>
+            <h3>Explore Dr. Fadugba's Complete 70+ Papers &amp; 1,550+ Citations</h3>
+            <p>
+              This section presents a curated selection of Dr. Fadugba's most cited works and representative breakthroughs. To examine the complete scholarly catalogue of 70+ peer-reviewed papers, international citations (1,550+ all-time, 1,134+ since 2021), h-index of 20, and i10-index of 53, visit his official Google Scholar profile.
+            </p>
+          </div>
+          <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="b-btn b-btn--white" style="display:inline-flex; align-items:center; gap:0.5rem; white-space:nowrap;">
+            <span>Open Google Scholar Profile</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+
+        <!-- Bottom Bento Grid (2-col) -->
+        <div class="bento-grid-2">
+          <!-- Card 1: Blue -->
+          <article class="b-card b-card--blue">
+            <span class="b-stat-label">Collaborative Opportunities</span>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; margin: 0.35rem 0 0.75rem; color: #fff;">
+              Propose a Joint Research Initiative
+            </h3>
+            <p class="b-stat-desc" style="color: rgba(255,255,255,0.85);">
+              Dr. Fadugba regularly welcomes international co-investigations, joint research grant applications, and interdisciplinary collaborations in numerical finance and computational sciences.
+            </p>
+            <a href="contact.html" class="b-btn b-btn--white">Contact Dr. Fadugba &rarr;</a>
+          </article>
+
+          <!-- Card 2: White -->
+          <article class="b-card b-card--white">
+            <span class="b-stat-label">Theoretical Foundations</span>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; margin: 0.35rem 0 0.75rem; color: #0f1240;">
+              Explore Research Domains
+            </h3>
+            <p class="b-stat-desc">
+              Delve into the underlying mathematical pillars — from Mellin transform theory and fractional boundary value problems to Physics-Informed Neural Networks (PINNs).
+            </p>
+            <a href="research.html" class="b-btn b-btn--blue">Explore Research Domains &rarr;</a>
+          </article>
+        </div>
+
       </div>
     </section>
   </main>
@@ -147,7 +874,7 @@
         <pre class="bibtex-box" id="bibtex-code"></pre>
       </div>
       <div class="modal-footer">
-        <button id="copy-bibtex-btn" class="btn btn-primary">
+        <button id="copy-bibtex-btn">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
           <span>Copy Citation</span>
         </button>
@@ -155,8 +882,10 @@
     </div>
   </div>
 
+  <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <!-- ── SITE FOOTER ── -->
   <footer id="site-footer">
     <div class="container footer-content">
       <div class="footer-brand">Dr. S. E. Fadugba<span class="brand-highlight">.</span></div>
@@ -169,6 +898,23 @@
         <li><a href="cv.html">CV</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="footer-socials">
+        <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Google Scholar" aria-label="Google Scholar">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4 3.18v6.77L12 24l8-4.55V12.68l4-3.18L12 0z"/></svg>
+        </a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=56104468000" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Scopus ID" aria-label="Scopus ID">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        </a>
+        <a href="http://www.ams.org/mathscinet/MRAuthorID/1022379" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="MathSciNet ID" aria-label="MathSciNet ID">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v2.5L12 12l8 5.5V20H4v-2.5l7-5.5L4 6.5V4z"/></svg>
+        </a>
+        <a href="https://orcid.org/0000-0003-0911-6838" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="ORCID" aria-label="ORCID">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-3.082 18.232H6.96V8.125h1.958v10.107zm-.979-11.493a1.137 1.137 0 110-2.274 1.137 1.137 0 010 2.274zm8.397 7.086c0 2.457-1.42 4.407-4.108 4.407h-3.413V8.125h3.413c2.688 0 4.108 1.95 4.108 4.407v1.293z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sunday-fadugba-ph-d-fasi-afaan-mages-cmacsp-mnsps-858b9663?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn" aria-label="LinkedIn">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+      </div>
       <p class="footer-copy">&copy; 2026 Dr. Sunday Emmanuel Fadugba. All rights reserved.</p>
     </div>
   </footer>

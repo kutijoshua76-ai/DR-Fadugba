@@ -9,6 +9,12 @@ desktop.ini
 *.swp
 *.swo
 
+# Dependencies
+node_modules/
+
+# Production Build
+dist/
+
 # Environment & Logs
 *.log
 .env
