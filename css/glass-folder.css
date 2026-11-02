@@ -516,3 +516,48 @@ canvas.gf-sheet-art[data-ready] {
     gap: 2rem;
   }
 }
+
+@media (max-width: 900px) {
+  .glass-folders-showcase {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-folders-showcase-wrap {
+    margin: 1rem 0 1.5rem;
+    padding: 0.5rem 0;
+    overflow: hidden;
+  }
+  .glass-folders-showcase {
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .gf-root {
+    zoom: 0.82;
+    -moz-transform: scale(0.82);
+    -moz-transform-origin: top center;
+  }
+  .glass-folders-hint {
+    font-size: 0.7rem;
+    margin-top: 1.25rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-width: 480px) {
+  .glass-folders-showcase {
+    gap: 1rem;
+  }
+  .gf-root {
+    zoom: 0.74;
+    -moz-transform: scale(0.74);
+    -moz-transform-origin: top center;
+  }
+  .glass-folders-hint {
+    font-size: 0.65rem;
+    margin-top: 1rem;
+    letter-spacing: 0.08em;
+  }
+}

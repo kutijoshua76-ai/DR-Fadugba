@@ -222,3 +222,17 @@
   -webkit-line-clamp: 4;
 }
 
+@media (max-width: 760px) {
+  .glass-folder-drawer {
+    padding: 1.25rem 0 1rem;
+  }
+  .glass-folder-drawer .b-card {
+    padding: 1.15rem 1.25rem;
+    border-radius: 16px;
+  }
+  .drawer-heading {
+    font-size: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+}
+
