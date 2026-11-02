@@ -187,9 +187,9 @@
     /* ---- Profile Hero Row (photo + quick-info side by side) ---- */
     .b-profile-hero-row {
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      grid-template-columns: 280px 1fr;
+      gap: 1.75rem;
+      margin-bottom: 2.25rem;
       align-items: start;
     }
 
@@ -198,11 +198,11 @@
       display: flex;
       flex-direction: column;
       background: #ffffff;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s;
-      max-width: 240px;
+      max-width: 280px;
       width: 100%;
     }
     .b-portrait-card:hover {
@@ -215,16 +215,16 @@
       position: relative;
       overflow: hidden;
       line-height: 0;
-      border-radius: 18px 18px 0 0;
+      border-radius: 20px 20px 0 0;
     }
     .b-portrait-img {
       width: 100%;
-      height: 280px;
-      aspect-ratio: 3 / 4;
+      height: 320px;
+      aspect-ratio: 4 / 4.6;
       object-fit: cover;
-      object-position: center 10%;
+      object-position: center 8%;
       display: block;
-      border-radius: 18px 18px 0 0;
+      border-radius: 20px 20px 0 0;
       transition: transform 0.4s ease;
     }
     .b-portrait-card:hover .b-portrait-img {
@@ -232,27 +232,27 @@
     }
     .b-portrait-meta {
       background: #ffffff;
-      padding: 1.1rem 1.25rem 1.25rem;
+      padding: 1.35rem 1.4rem 1.45rem;
       display: flex;
       flex-direction: column;
       flex: 1;
       justify-content: space-between;
-      border-radius: 0 0 18px 18px;
+      border-radius: 0 0 20px 20px;
     }
     .b-portrait-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
       color: #3b48d4;
       background: #eff6ff;
       border: 1px solid #dbeafe;
-      padding: 0.22rem 0.65rem;
+      padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.65rem;
       align-self: flex-start;
     }
     .b-portrait-badge .pulse-dot {
@@ -263,17 +263,17 @@
     }
     .b-portrait-name {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 800;
       color: #0f1240;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
       line-height: 1.25;
     }
     .b-portrait-role {
-      font-size: 0.8rem;
+      font-size: 0.84rem;
       color: #3b48d4;
       font-weight: 700;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.9rem;
     }
     .b-meta-list {
       display: flex;
@@ -294,20 +294,21 @@
     .b-portrait-actions {
       display: flex;
       gap: 0.65rem;
-      margin-top: 0.85rem;
-      padding-top: 0.75rem;
+      margin-top: 0.9rem;
+      padding-top: 0.8rem;
       border-top: 1px solid #f1f1f4;
     }
     .b-btn-sm {
       flex: 1;
       text-align: center;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      padding: 0.5rem 0.65rem;
+      padding: 0.55rem 0.85rem;
       border-radius: 999px;
       text-decoration: none;
       transition: all 0.2s ease;
       display: inline-block;
+      white-space: nowrap;
     }
     .b-btn-sm--blue {
       background: #3b48d4;
@@ -661,13 +662,13 @@
     /* Tablets: 1024px and below */
     @media (max-width: 1024px) {
       .bento-grid-primary { grid-template-columns: 1fr 1fr; }
-      .b-portrait-card { grid-row: auto; max-width: 210px; }
-      .b-portrait-img { height: 250px; }
+      .b-portrait-card { grid-row: auto; max-width: 250px; }
+      .b-portrait-img { height: 290px; }
       .b-bio2-card { grid-column: auto; }
       .bento-grid-positions { grid-template-columns: 1fr 1fr; }
       .bento-grid-pillars { grid-template-columns: 1fr 1fr; }
       .bento-cta-row { grid-template-columns: 1fr; }
-      .b-profile-hero-row { grid-template-columns: 210px 1fr; gap: 1.25rem; }
+      .b-profile-hero-row { grid-template-columns: 250px 1fr; gap: 1.4rem; }
     }
 
     /* Large mobile: 768px and below */
@@ -677,22 +678,37 @@
       .page-hero { padding: calc(var(--header-height) + 2rem) 0 2rem; }
       .page-hero-title { font-size: 1.75rem; }
 
-      /* Portrait hero stacks vertically on mobile — photo is centered and compactly framed */
+      /* Portrait hero stacks vertically on mobile — photo is centered and comfortably proportioned */
       .b-profile-hero-row {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1.5rem;
       }
       .b-portrait-card {
-        max-width: 210px;
+        max-width: 360px;
+        width: 100%;
         margin: 0 auto;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       }
-      .b-portrait-img-wrap { max-height: 250px; }
+      .b-portrait-img-wrap { max-height: 330px; border-radius: 20px 20px 0 0; }
       .b-portrait-img {
-        height: 250px;
-        aspect-ratio: 3 / 4;
+        height: 330px;
+        width: 100%;
+        aspect-ratio: 4 / 4.4;
         object-fit: cover;
-        object-position: center 10%;
+        object-position: center 8%;
+        border-radius: 20px 20px 0 0;
+      }
+      .b-portrait-meta {
+        padding: 1.35rem 1.4rem 1.45rem;
+      }
+      .b-portrait-name {
+        font-size: 1.25rem;
+      }
+      .b-btn-sm {
+        font-size: 0.82rem;
+        padding: 0.58rem 0.85rem;
+        white-space: nowrap;
       }
 
       .bento-grid-primary,
@@ -715,25 +731,31 @@
       .bento-section-heading { font-size: 1.25rem; }
 
       .b-portrait-card {
-        max-width: 195px;
+        max-width: 330px;
+        width: 100%;
+        margin: 0 auto;
       }
-      .b-portrait-img-wrap { max-height: 230px; }
+      .b-portrait-img-wrap { max-height: 300px; }
       .b-portrait-img {
-        height: 230px;
+        height: 300px;
+        aspect-ratio: 4 / 4.2;
+        object-fit: cover;
+        object-position: center 8%;
       }
       .b-portrait-meta {
-        padding: 0.9rem 1rem 1rem;
+        padding: 1.15rem 1.25rem 1.25rem;
       }
       .b-portrait-name {
-        font-size: 1.05rem;
+        font-size: 1.15rem;
       }
       .b-portrait-role {
-        font-size: 0.75rem;
-        margin-bottom: 0.65rem;
+        font-size: 0.78rem;
+        margin-bottom: 0.75rem;
       }
       .b-btn-sm {
-        font-size: 0.75rem;
-        padding: 0.45rem 0.5rem;
+        font-size: 0.8rem;
+        padding: 0.52rem 0.75rem;
+        white-space: nowrap;
       }
 
       .b-card--blue,
@@ -830,11 +852,11 @@
                 <span class="pulse-dot"></span>
                 Senior Faculty &amp; DPO
               </div>
-              <div class="b-portrait-name">Dr. Sunday E. Fadugba</div>
+              <div class="b-portrait-name">Dr. Sunday Emmanuel Fadugba</div>
               <div class="b-portrait-role">Applied Mathematician &amp; University Leader</div>
               <div class="b-portrait-actions">
                 <a href="cv.html" class="b-btn-sm b-btn-sm--blue">Academic CV</a>
-                <a href="contact.html" class="b-btn-sm b-btn-sm--outline">Contact</a>
+                <a href="contact.html" class="b-btn-sm b-btn-sm--outline">Contact Desk</a>
               </div>
               <div class="b-portrait-socials">
                 <a href="https://scholar.google.com/citations?pli=1&authuser=1&user=BAbkMU4AAAAJ" target="_blank" rel="noopener noreferrer" class="b-social-icon" title="Google Scholar" aria-label="Google Scholar">
