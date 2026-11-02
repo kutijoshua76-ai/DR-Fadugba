@@ -20,6 +20,7 @@
   vertical-align: top;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   isolation: isolate;
   cursor: pointer;
@@ -429,16 +430,19 @@ canvas.gf-sheet-art[data-ready] {
 /* Entrance Animation */
 .gf-root:not([data-entered]) .gf-back,
 .gf-root:not([data-entered]) .gf-back-rim {
+  transform: translateY(22px);
   translate: 0 22px;
   opacity: 0;
 }
 
 .gf-root:not([data-entered]) .gf-sheet {
+  transform: translateY(-120px);
   translate: 0 -120px;
   opacity: 0;
 }
 
 .gf-root:not([data-entered]) .gf-front {
+  transform: translateY(46px);
   translate: 0 46px;
   opacity: 0;
 }
@@ -449,7 +453,7 @@ canvas.gf-sheet-art[data-ready] {
 
 .gf-back,
 .gf-back-rim {
-  transition: translate 1s var(--gf-ease), opacity .9s var(--gf-ease);
+  transition: transform 1s var(--gf-ease), translate 1s var(--gf-ease), opacity .9s var(--gf-ease);
 }
 
 .gf-root[data-entered] .gf-sheet {
@@ -535,9 +539,8 @@ canvas.gf-sheet-art[data-ready] {
     align-items: center;
   }
   .gf-root {
-    zoom: 0.82;
-    -moz-transform: scale(0.82);
-    -moz-transform-origin: top center;
+    transform: scale(0.82);
+    transform-origin: top center;
   }
   .glass-folders-hint {
     font-size: 0.7rem;
@@ -551,9 +554,8 @@ canvas.gf-sheet-art[data-ready] {
     gap: 1rem;
   }
   .gf-root {
-    zoom: 0.74;
-    -moz-transform: scale(0.74);
-    -moz-transform-origin: top center;
+    transform: scale(0.74);
+    transform-origin: top center;
   }
   .glass-folders-hint {
     font-size: 0.65rem;
