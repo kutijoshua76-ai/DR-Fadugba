@@ -392,6 +392,7 @@ img {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .btn-executive-pill {
@@ -1830,6 +1831,110 @@ img {
   }
   .pub-search-box {
     width: 100%;
+  }
+
+  /* ---- Hero Action Buttons — stack on mobile ---- */
+  .hero-action-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  .btn-executive-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.84rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* ---- Bento .b-btn — full width on mobile ---- */
+  .b-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.88rem;
+  }
+
+  /* ---- Bento .b-btn-sm ---- */
+  .b-btn-sm {
+    font-size: 0.82rem;
+    padding: 0.6rem 1rem;
+    white-space: nowrap;
+  }
+
+  /* ---- Publication filter pills ---- */
+  .pub-filters {
+    gap: 0.4rem;
+  }
+  .pub-filter-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  /* ---- Publication link button ---- */
+  .btn-pub-link {
+    font-size: 0.8rem;
+    padding: 0.42rem 0.75rem;
+  }
+
+  /* ---- Connect link ---- */
+  .b-connect-link {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.1rem;
+  }
+}
+
+/* ==========================================================================
+   Extra-small mobile: 480px and below
+   ========================================================================== */
+@media (max-width: 480px) {
+  /* Hero CTA row — always stacked and full-width */
+  .hero-action-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .btn-executive-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.82rem;
+  }
+
+  /* All bento .b-btn full-width and comfortably tappable */
+  .b-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.72rem 1rem;
+    font-size: 0.84rem;
+    min-height: 44px;
+  }
+
+  /* Bento small buttons — comfortable tap target */
+  .b-btn-sm {
+    font-size: 0.78rem;
+    padding: 0.55rem 0.85rem;
+    min-height: 40px;
+    white-space: nowrap;
+  }
+
+  /* Publication filter chips */
+  .pub-filter-btn {
+    padding: 0.42rem 0.75rem;
+    font-size: 0.75rem;
+    min-height: 36px;
+  }
+
+  /* Publication link/action buttons */
+  .btn-pub-link {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.65rem;
+  }
+
+  /* Btn full-width util */
+  .btn-full-width {
+    width: 100%;
+    justify-content: center;
   }
 }
 
