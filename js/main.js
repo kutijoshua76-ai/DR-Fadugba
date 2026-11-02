@@ -25,6 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
         navMenu.classList.remove("open");
       });
     });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (navMenu.classList.contains("open") && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        mobileToggle.setAttribute("aria-expanded", "false");
+        mobileToggle.classList.remove("active");
+        navMenu.classList.remove("open");
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("open")) {
+        mobileToggle.setAttribute("aria-expanded", "false");
+        mobileToggle.classList.remove("active");
+        navMenu.classList.remove("open");
+      }
+    });
   }
 
   // Header blur and style change on scroll

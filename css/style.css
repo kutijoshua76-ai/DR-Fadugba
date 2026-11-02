@@ -50,12 +50,20 @@ html {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   background-color: var(--bg-primary);
   color: var(--text-secondary);
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Typography Utilities */
@@ -1775,11 +1783,17 @@ img {
     background: #081432;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     flex-direction: column;
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
+    padding: 1.75rem 1.5rem;
+    gap: 1.25rem;
     transform: translateY(-120%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    max-height: calc(100vh - var(--header-height));
+    max-height: calc(100dvh - var(--header-height));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    z-index: 999;
   }
   .nav-menu.open {
     transform: translateY(0);
@@ -1788,6 +1802,18 @@ img {
     font-size: 1rem;
     width: 100%;
     text-align: center;
+    padding: 0.5rem 0;
+  }
+  /* iOS & Android Form Controls — prevent zoom */
+  .form-input,
+  .form-select,
+  .form-textarea,
+  .pub-search-input {
+    font-size: 16px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: var(--radius-sm);
   }
   .hero-split-grid {
     grid-template-columns: 1fr;
@@ -1902,6 +1928,43 @@ img {
    Extra-small mobile: 480px and below
    ========================================================================== */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 1.15rem;
+  }
+  .hero-editorial-title {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+  .hero-lead-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .hero-composition {
+    max-width: 280px;
+    height: 350px;
+    margin: 0 auto;
+  }
+  .composition-pill {
+    width: 220px;
+    height: 330px;
+    right: 15px;
+    top: 5px;
+  }
+  .composition-cyan-accent {
+    width: 80px;
+    height: 80px;
+    bottom: 15px;
+  }
+  .composition-portrait-img {
+    max-width: 260px;
+    height: 330px;
+  }
+  .hero-floating-impact-card {
+    padding: 1.25rem 1rem;
+    gap: 1.15rem;
+    border-radius: 16px;
+  }
+
   /* Hero CTA row — always stacked and full-width */
   .hero-action-row {
     flex-direction: column;
