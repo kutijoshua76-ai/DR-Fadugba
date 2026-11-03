@@ -971,7 +971,7 @@
         seed: 51,
         appearDelay: 0,
         files: [
-          { name: "Department of Mathematics", meta: "Faculty of Science, EKSU", art: "glacier" },
+          { name: "Room 135, Mathematics", meta: "Faculty of Physical Sciences, EKSU", art: "glacier" },
           { name: "Official Email Desk", meta: "sunday.fadugba@eksu.edu.ng", art: "aurora" },
           { name: "Office Consultation", meta: "By Academic Appointment", art: "verdant" }
         ]
